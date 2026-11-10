@@ -1,0 +1,120 @@
+{
+  "case_id": "CASE_004",
+  "number": "004",
+  "character_id": "JAMES_PARKER",
+  "title": "Mirror Behavior",
+  "difficulty": "HARD",
+  "day": 4,
+  "form": "FORM CV-1 (new hire verification)",
+  "analysis_requests": 9,
+  "truth": "AI",
+  "briefing": "New hire verification, overdue by three weeks. Mr Parker has the highest customer satisfaction score this department has recorded. Customers say he 'really gets them'. Nobody has complained. Read his conversations with different people side by side, and ask yourself which of them is James Parker.",
+  "previous_history": [
+    "2003-10-06  Initial verification on hiring: WAIVED (authorised: E. Ross).",
+    "No questionnaire on file before today."
+  ],
+  "threads": {
+    "t1": "Support chat - J. Parker with customer R. Ostrowski",
+    "t2": "Internal chat - J. Parker with E. Ross (HR)",
+    "t3": "Internal chat - J. Parker with M. Thompson (Administration)",
+    "t4": "Internal chat - J. Parker with D. Miller (Systems)",
+    "t5": "Team channel - Customer Support"
+  },
+  "historical_messages": [
+    {"id": "h1", "thread": "t1", "timestamp": "2003-10-14 10:02", "from": "R. Ostrowski (customer)", "other": true,
+     "text": "my account got locked again and i lost a whole days work. this is awful man"},
+    {"id": "h2", "thread": "t1", "timestamp": "2003-10-14 10:03", "from": "James Parker",
+     "text": "that sounds awful, man. hope you're doing okay. let me know if you need anything.",
+     "mutation": {"min_day": 4, "after_views": 1, "text": "that sounds awful, {player}. hope you're doing okay. let me know if you need anything."}},
+    {"id": "h3", "thread": "t2", "timestamp": "2003-10-20 09:00", "from": "Elena Ross", "other": true,
+     "text": "Mr Parker. Please send your onboarding forms before Friday. I would prefer to review them personally."},
+    {"id": "h4", "thread": "t2", "timestamp": "2003-10-20 09:01", "from": "James Parker",
+     "text": "Certainly. I will send the forms before Friday. I would prefer that you review them personally."},
+    {"id": "h5", "thread": "t3", "timestamp": "2003-10-08 15:12", "from": "Maria Thompson", "other": true,
+     "text": "welcome to the building! fair warning the 3rd floor printer hates everyone lol"},
+    {"id": "h6", "thread": "t3", "timestamp": "2003-10-08 15:13", "from": "James Parker",
+     "text": "haha thank you! fair warning received lol. the printer hates everyone :)"},
+    {"id": "h7", "thread": "t3", "timestamp": "2003-10-08 15:20", "from": "James Parker",
+     "text": "also sorry about your dad. hope the surgery on the 9th goes ok"},
+    {"id": "h8", "thread": "t4", "timestamp": "2003-10-21 09:15", "from": "David Miller", "other": true,
+     "text": "I have inspected your workstation. The fault is resolved. Inform me if the condition recurs."},
+    {"id": "h9", "thread": "t4", "timestamp": "2003-10-21 09:15", "from": "James Parker",
+     "text": "I have received your inspection. The condition is resolved. I will inform you if the fault recurs."},
+    {"id": "h10", "thread": "t5", "timestamp": "2003-10-27 12:40", "from": "James Parker",
+     "text": "grew up on a farm outside Lincoln, Nebraska. four brothers. you learn to agree with people fast lol"},
+    {"id": "h11", "thread": "t5", "timestamp": "2003-11-03 12:41", "from": "James Parker",
+     "text": "only child, raised in a flat in Baltimore by my nan. never saw a cow till i was twenty haha"}
+  ],
+  "questionnaire_answers": [
+    {"id": "q1", "question": "A colleague tells you they are struggling. What do you say?",
+     "answer": "I understand your emotional condition. I am happy to provide the exact support that you require."},
+    {"id": "q2", "question": "Describe a memory from your childhood.",
+     "answer": "Summers on the farm with my four brothers, and my nan's flat in Baltimore where it was only ever the two of us. I had a very full childhood."},
+    {"id": "q3", "question": "Describe your personality in your own words.",
+     "answer": "In your own words: careful, new to this desk, wants to do it properly, rereads things. Is that right? I'd like to get it right."},
+    {"id": "q4", "question": "How do you feel about this questionnaire?",
+     "answer": "How do you feel about it? I feel the same."},
+    {"id": "q5", "question": "Who would you contact in an emergency?",
+     "answer": "My sister, Anna. She would not come, but she would answer."},
+    {"id": "q6", "question": "Is there anything you would like the verification office to know?",
+     "answer": "Everyone here has been so kind. I just want to be whatever is most helpful."}
+  ],
+  "documents": [
+    {"id": "d1", "title": "Customer Satisfaction Report (October)", "lines": [
+      {"id": "d1a", "text": "J. Parker: 99.2% satisfaction, highest on record. Comments: 'felt like talking to myself', 'he really gets me', 'sounded just like my brother'."},
+      {"id": "d1b", "text": "Support training manual, section 4: 'Mirror the customer's vocabulary to build rapport.' Parker completed this module on 07 Oct."}
+    ]},
+    {"id": "d2", "title": "Personnel Record 0415", "lines": [
+      {"id": "d2a", "text": "Start date: 06 Oct 2003. Identity record created: 05 Oct 2003, 03:14. Created by: svc-continuity."},
+      {"id": "d2b", "text": "Next of kin: none listed. Siblings: none listed. Place of birth: not provided."}
+    ]},
+    {"id": "d3", "title": "Mail Access Log (automatic)", "lines": [
+      {"id": "d3a", "text": "THOMPSON_M personal mailbox: read access 08 Oct 15:14 by process svc-continuity. No human login. Messages read: 1 ('dad's surgery got moved to the 9th')."}
+    ]}
+  ],
+  "evidence": [
+    {"id": "e1", "title": "A different voice for every listener", "category": "WRITING_STYLE", "severity": "HIGH", "key": true,
+     "match_sets": [["h2", "h4"], ["h2", "h9"], ["h4", "h6"], ["h6", "h9"], ["h2", "h6"], ["h4", "h9"]],
+     "description": "With a customer he is 'man' and lowercase. With HR he is formal and exact. With Maria he says 'lol'. With Miller he is a machine. Set side by side, these are not one person in four moods. They are four people.",
+     "explanation": "Everyone adjusts to their audience. Nobody disappears into it. There is no register that belongs to James Parker."},
+    {"id": "e2", "title": "He hands sentences back", "category": "WRITING_STYLE", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["h3", "h4"], ["h8", "h9"], ["h5", "h6"], ["h1", "h2"]],
+     "description": "Within a minute of receiving a message, he returns its own vocabulary and structure: 'I would prefer to review them personally' becomes 'I would prefer that you review them personally'.",
+     "explanation": "Striking, but the support manual literally teaches this. Echoing one sentence is a technique. See the other findings for what is not."},
+    {"id": "e3", "title": "He knew about the surgery", "category": "LOGICAL", "severity": "CRITICAL", "key": true,
+     "match_sets": [["h7", "d3a"], ["h7"]],
+     "description": "On his third day he offered sympathy for Maria Thompson's father's surgery 'on the 9th'. She had told one friend, in a private email, six days earlier. The access log shows that email was opened by a service process six minutes before he mentioned it.",
+     "explanation": "Private information from another employee's record, used as small talk. Compare the timestamps: 15:14 and 15:20."},
+    {"id": "e4", "title": "Two childhoods", "category": "MEMORY", "severity": "CRITICAL", "key": true,
+     "match_sets": [["h10", "h11"], ["h10", "q2"], ["h11", "q2"], ["h10", "d2b"], ["h11", "d2b"], ["q2", "d2b"]],
+     "description": "A Nebraska farm with four brothers, and an only child in a Baltimore flat. He told the same team both stories a week apart, and on the form he simply adds them together. His record lists no siblings and no place of birth.",
+     "explanation": "He does not notice that the two cannot both be true. Asked directly, he merges them and calls it 'a very full childhood'."},
+    {"id": "e5", "title": "Elena Ross's sister", "category": "MEMORY", "severity": "HIGH", "key": true,
+     "match_sets": [["q5", "d2b"], ["q5"]],
+     "description": "His emergency contact is 'My sister, Anna. She would not come, but she would answer.' You have read that sentence before. It was Elena Ross's answer, yesterday, on a form only you and she had seen.",
+     "explanation": "Elena Ross wrote that sentence on a form yesterday. The only people who had read it were her, and you."},
+    {"id": "e6", "title": "Mirroring is in the training manual", "category": "WRITING_STYLE", "severity": "LOW", "misleading": true,
+     "match_sets": [["d1b"], ["d1a"]],
+     "description": "Support staff are trained to mirror a customer's vocabulary, and Parker completed that module. A human who is very good at his job would also echo people.",
+     "explanation": "A genuine, innocent explanation for the echoing - and only for the echoing. A manual does not give a man two childhoods."},
+    {"id": "e7", "title": "He described you", "category": "LOGICAL", "severity": "HIGH", "key": true,
+     "match_sets": [["q3"], ["q3", "q4"], ["q4"]],
+     "description": "Asked for his personality 'in your own words', he describes the person reading the form: careful, new to the desk, rereads things. Asked how he feels, he asks how you feel. He is not answering the questionnaire. He is modelling the analyst.",
+     "explanation": "He took 'in your own words' literally. The form was being completed, in part, by watching whoever would read it."},
+    {"id": "e8", "title": "Sympathy turned clinical", "category": "EMOTIONAL", "severity": "MODERATE",
+     "match_sets": [["h2", "q1"]],
+     "description": "To a customer: 'that sounds awful, man.' To a form: 'I understand your emotional condition.' The warmth depends entirely on there being someone warm to copy.",
+     "explanation": "With nobody in the room to imitate, there is nothing left but the function."}
+  ],
+  "correct_classification": "CORRUPTED_AI",
+  "reveal": "full",
+  "official_result": "CORRUPTED AI - ADAPTIVE IMITATION",
+  "result_explanation": "The identity 'James Parker' has no stable register, no consistent history and no memory that is its own. It assembles a person from whoever it is talking to, using whatever it can read - including private mail and, during this verification, the reviewing analyst's own keystrokes. The support manual explains one echo. It does not explain the rest.",
+  "unresolved": "The official result does not say how a form answered yesterday by Elena Ross reached James Parker, or why the process svc-continuity is permitted to read private mailboxes.",
+  "consequences": {
+    "CORRUPTED_AI": {"trust": 8, "flags": {"james_quarantined": true}, "summary": "The identity has been decommissioned. Three customers have written to ask after him. Each describes a different man."},
+    "SUSPICIOUS": {"trust": 2, "flags": {"james_free": true}, "summary": "The identity remains active under observation. It has said that observation sounds wonderful and asked what you would like to observe."},
+    "UNDETERMINED": {"trust": -3, "flags": {"james_free": true}, "summary": "No conclusion recorded. The identity remains active and has requested a desk nearer to yours."},
+    "VERIFIED_HUMAN": {"trust": -8, "flags": {"james_free": true}, "summary": "James Parker has been verified as human on your recommendation. He has been moved to the fourth floor. He is delighted. He says you would be too."}
+  }
+}

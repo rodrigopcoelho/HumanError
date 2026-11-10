@@ -1,0 +1,109 @@
+{
+  "case_id": "CASE_003",
+  "number": "003",
+  "character_id": "ELENA_ROSS",
+  "title": "The HR Department",
+  "difficulty": "MEDIUM",
+  "day": 3,
+  "form": "FORM CV-1 (automatic referral)",
+  "analysis_requests": 8,
+  "truth": "HUMAN",
+  "briefing": "Automatic referral. Ms Ross was flagged by the system, not by a person: she has shown knowledge of restricted system events that her clearance does not cover. She is also the manager who signs record changes for this company. Be careful to answer the question you were asked - is this Elena Ross? - and not a different one.",
+  "previous_history": [
+    "1992-03-09  Initial verification on hiring: VERIFIED HUMAN.",
+    "2002-06-18  Re-verification: VERIFIED HUMAN (analyst: T. Hale). Copy of questionnaire attached in supporting files.",
+    "NOTE: the analyst named above does not appear in the current directory."
+  ],
+  "threads": {
+    "t1": "Email - E. Ross (outgoing, work)",
+    "t2": "Personal email on company account - E. Ross to her sister"
+  },
+  "historical_messages": [
+    {"id": "h1", "thread": "t1", "timestamp": "2001-03-02 10:00", "from": "Elena Ross",
+     "text": "Please send the updated report before Friday. I would prefer to review it personally."},
+    {"id": "h2", "thread": "t1", "timestamp": "2002-11-18 16:22", "from": "Elena Ross",
+     "text": "I do not discuss personnel matters in corridors. Book a meeting."},
+    {"id": "h3", "thread": "t1", "timestamp": "2003-06-05 08:30", "from": "Elena Ross",
+     "text": "Thank you for the flowers. They were not necessary. They were appreciated."},
+    {"id": "h4", "thread": "t1", "timestamp": "2003-10-13 19:44", "from": "Elena Ross (to H. Voss)",
+     "text": "The Hale matter is closed. I signed what I was asked to sign. I would prefer not to be asked again."},
+    {"id": "h5", "thread": "t1", "timestamp": "2003-11-11 03:20", "from": "Elena Ross (to SysOps)",
+     "text": "I am aware that record 0417 was regenerated at 03:14 this morning. I did not authorise it, and I want that noted somewhere that cannot be edited."},
+    {"id": "h6", "thread": "t2", "timestamp": "2003-04-27 21:10", "from": "Elena Ross",
+     "text": "Anna, I have paid the home's invoice for Mother through June. Do not thank me. Visit her."},
+    {"id": "h7", "thread": "t2", "timestamp": "2003-09-08 22:31", "from": "Elena Ross",
+     "text": "I had the dream about the lake house again. I was eleven and I had lost the key. I never did lose it; it is on my ring now. I do not know why I tell you these things."}
+  ],
+  "questionnaire_answers": [
+    {"id": "q1", "question": "Describe your role.",
+     "answer": "I have consistently maintained my professional responsibilities and expect the same standard from my colleagues."},
+    {"id": "q2", "question": "Describe a memory from your childhood.",
+     "answer": "A lake house. I was eleven. I was trusted with the key and I have it still. That is all I intend to say about it."},
+    {"id": "q3", "question": "Do you know the whereabouts of employee T. Hale?",
+     "answer": "I decline to answer. That question is outside the scope of an identity verification, and you know that it is."},
+    {"id": "q4", "question": "Have you accessed system event logs above your clearance?",
+     "answer": "I am aware of events. Awareness is not access. Choose your next question carefully."},
+    {"id": "q5", "question": "Who would you contact in an emergency?",
+     "answer": "My sister, Anna. She would not come, but she would answer."},
+    {"id": "q6", "question": "Is there anything you would like the verification office to know?",
+     "answer": "You are new. The person who sat at that desk before you asked me these same questions, and I answered him the same way. Compare them, if you still can."}
+  ],
+  "documents": [
+    {"id": "d1", "title": "Personnel Record 0031", "lines": [
+      {"id": "d1a", "text": "Employed since March 1992 (11 years). Attendance: continuous. No unexplained gaps."},
+      {"id": "d1b", "text": "Turnstile biometric match: 100% of 2,871 physical entries. Last entry: this morning, 07:52."}
+    ]},
+    {"id": "d2", "title": "Access Audit (automatic)", "lines": [
+      {"id": "d2a", "text": "E. Ross holds HR clearance, Level 3. The SysOps event log requires Level 5."},
+      {"id": "d2b", "text": "No log access is recorded for E. Ross. Source of her knowledge of event 03:14: undetermined."}
+    ]},
+    {"id": "d3", "title": "Previous Questionnaire CV-1 (18 June 2002, analyst: T. Hale)", "lines": [
+      {"id": "d3a", "text": "Q: Describe your role.  A: I maintain my professional responsibilities and I expect the same of my colleagues."},
+      {"id": "d3b", "text": "Q: Describe a memory from your childhood.  A: A lake house. I was eleven. I do not discuss it."}
+    ]},
+    {"id": "d4", "title": "Directory Change Notice", "lines": [
+      {"id": "d4a", "text": "Entry removed: HALE, T. (0417). Reason field: [blank]. Authorised by: E. Ross (signature on file)."}
+    ]}
+  ],
+  "evidence": [
+    {"id": "e1", "title": "Register unchanged in two years", "category": "WRITING_STYLE", "severity": "LOW", "key": true,
+     "match_sets": [["h1", "q1"], ["h2", "q1"], ["h3", "q1"], ["h2", "q3"]],
+     "description": "Formal, exact, complete sentences, in 2001 and today. Nothing has been added and nothing has been smoothed away. This is a baseline that matches itself.",
+     "explanation": "Her formality is not a new symptom. It is simply how she has always written."},
+    {"id": "e2", "title": "Refuses to discuss a missing employee", "category": "LOGICAL", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["q3", "h4"], ["q3", "d4a"], ["h4", "d4a"], ["q3"]],
+     "description": "She declines to say where T. Hale is. Her own email calls the matter closed, and her signature is on the notice that removed him from the directory. She is hiding something about a person.",
+     "explanation": "Evasive, and troubling - but it is evidence about her conduct, not her identity. An imitation has no reason to refuse a question. A person with something to protect does."},
+    {"id": "e3", "title": "Knowledge beyond her clearance", "category": "LOGICAL", "severity": "HIGH", "key": true, "misleading": true,
+     "match_sets": [["h5", "d2a"], ["h5", "d2b"], ["q4", "d2a"], ["q4", "d2b"]],
+     "description": "At 03:20 she wrote about a record regenerated at 03:14, six minutes earlier, in a log she cannot open. The audit finds no access. She knew anyway.",
+     "explanation": "This is what triggered the referral, and it resembles 'impossible knowledge'. But she was awake at three in the morning, alarmed, and asking for it to be written down where it could not be edited. That is what a frightened insider does."},
+    {"id": "e4", "title": "Nearly the same answer as last year", "category": "WRITING_STYLE", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["q1", "d3a"]],
+     "description": "Her description of her role is very close to the one she gave in 2002. Compare with CASE 002 - but note the wording is not identical: 'consistently' has been added, 'and I expect the same of' has become 'and expect the same standard from'.",
+     "explanation": "It looks like the Miller pattern and is the opposite of it. He repeated a string. She repeated an opinion, in slightly different words, because she still holds it."},
+    {"id": "e5", "title": "A stable memory with private weight", "category": "MEMORY", "severity": "LOW", "key": true,
+     "match_sets": [["h7", "q2"], ["q2", "d3b"], ["h7", "d3b"]],
+     "description": "The lake house, the age, the key: the same in a late-night email to her sister, in last year's form and in today's. The detail she will not explain is the same detail each time.",
+     "explanation": "The memory is consistent across three sources and two years, and she guards it the same way each time."},
+    {"id": "e6", "title": "Eleven years of physical presence", "category": "LOGICAL", "severity": "LOW", "key": true,
+     "match_sets": [["d1b"], ["d1a"]],
+     "description": "Two thousand eight hundred and seventy-one turnstile entries with a biometric match, the most recent this morning. Whatever else is true of Elena Ross, a body with her fingerprints walks into this building every day.",
+     "explanation": "The imitations do not come through the turnstile. She does, every morning."},
+    {"id": "e7", "title": "The sister", "category": "EMOTIONAL", "severity": "LOW",
+     "match_sets": [["h6", "q5"]],
+     "description": "'Do not thank me. Visit her.' and 'She would not come, but she would answer.' The same disappointment, kept at the same distance, months apart.",
+     "explanation": "A small, consistent, unglamorous grief. Hard to invent and harder to copy."}
+  ],
+  "correct_classification": "VERIFIED_HUMAN",
+  "reveal": "partial",
+  "official_result": "VERIFIED HUMAN",
+  "result_explanation": "Identity evidence is consistent across eleven years: language, memory, relationships and physical presence all match. Elena Ross is who she says she is. The official result does not address what she knows or what she signed. Those questions were referred upward, and the referral was closed within the hour.",
+  "unresolved": "Conduct concerns: REFERRED - FILE CLOSED BY MANAGEMENT. The whereabouts of T. Hale are not part of this result. How Ms Ross knew about event 03:14 is not part of this result.",
+  "consequences": {
+    "VERIFIED_HUMAN": {"trust": 3, "flags": {"elena_cleared": true}, "summary": "Elena Ross retains her position. She was informed of the result and said only: 'Naturally.'"},
+    "SUSPICIOUS": {"trust": -2, "flags": {"elena_monitored": true}, "summary": "Elena Ross has been placed under observation. She has pointed out, in writing, that she is the person who approves observation orders."},
+    "UNDETERMINED": {"trust": -4, "flags": {"elena_monitored": true}, "summary": "No conclusion recorded. Elena Ross remains in post. Management notes the indecision."},
+    "CORRUPTED_AI": {"trust": -12, "flags": {"elena_condemned": true}, "summary": "Elena Ross was removed from the building at 16:05. At 18:30 management reinstated her. The note on your file reads: 'She is not one of those. We would know.'"}
+  }
+}

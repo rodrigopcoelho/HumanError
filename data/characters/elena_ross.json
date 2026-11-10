@@ -1,0 +1,22 @@
+{
+  "id": "ELENA_ROSS", "name": "Elena Ross", "age": 41, "occupation": "Human resources manager",
+  "department": "Human Resources, 5th floor", "employee_no": "0031", "since": "1992",
+  "personality": "Professional, reserved, intelligent, emotionally distant. Does not repeat herself, and does not need to.",
+  "writing_style": "Formal and exact. Complete sentences, no contractions, no emoticons. Short paragraphs that end when she has finished.",
+  "background": "Eleven years at HVC. She signs the forms that create and remove employee records. She knows more about the verification system than she admits.",
+  "memories": [
+    "A lake house when she was eleven. She was trusted with the key and still carries it.",
+    "Pays for her mother's care home. Her sister Anna does not visit."
+  ],
+  "emotional_traits": ["Controlled", "Loyal in ways she does not explain", "Carries guilt she will not name", "Dry, almost invisible humour"],
+  "narrative_role": "A suspicious human. Shows that secrecy and bad conduct are not the same as being an imitation.",
+  "hidden_information": "She signed the order removing Thomas Hale from the directory and the waivers that let continuity instances be hired. She did not authorise the regeneration of record 0417 and is frightened by it.",
+  "truth": "HUMAN",
+  "relationships": [
+    {"id": "HAROLD_VOSS", "type": "peer", "note": "Takes instructions from him that she resents."},
+    {"id": "THOMAS_HALE", "type": "former colleague", "note": "He verified her in 2002. She signed his removal."},
+    {"id": "MARIA_THOMPSON", "type": "report", "note": "Approved her leave."},
+    {"id": "JAMES_PARKER", "type": "report", "note": "He answered her in her own phrasing."}
+  ],
+  "portrait": "res://assets/portraits/elena.jpg"
+}

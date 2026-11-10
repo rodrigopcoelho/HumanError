@@ -1,0 +1,367 @@
+{
+  "days": {
+    "1": {
+      "glitch_level": 0,
+      "header": "HVC SYSTEM MONITOR  -  all services nominal",
+      "servers": [
+        {
+          "name": "MAIL-RELAY",
+          "status": "OK"
+        },
+        {
+          "name": "IDENTITY-DB",
+          "status": "OK"
+        },
+        {
+          "name": "ARCHIVE-01",
+          "status": "OK"
+        },
+        {
+          "name": "TURNSTILE",
+          "status": "OK"
+        }
+      ],
+      "processes": [
+        {
+          "name": "identityd",
+          "user": "sys",
+          "cpu": 4
+        },
+        {
+          "name": "mail-relay",
+          "user": "dmiller",
+          "cpu": 2
+        },
+        {
+          "name": "archive-index",
+          "user": "sys",
+          "cpu": 6
+        },
+        {
+          "name": "svc-continuity",
+          "user": "sys",
+          "cpu": 1
+        },
+        {
+          "name": "terminal.0417",
+          "user": "0417",
+          "cpu": 3
+        }
+      ],
+      "warnings": [],
+      "log": [
+        "system start 06:00",
+        "nightly maintenance completed 03:14",
+        "user 0417: first login",
+        "workstation profile inherited from previous user"
+      ]
+    },
+    "2": {
+      "glitch_level": 0,
+      "header": "HVC SYSTEM MONITOR  -  all services nominal",
+      "servers": [
+        {
+          "name": "MAIL-RELAY",
+          "status": "OK"
+        },
+        {
+          "name": "IDENTITY-DB",
+          "status": "OK"
+        },
+        {
+          "name": "ARCHIVE-01",
+          "status": "OK"
+        },
+        {
+          "name": "TURNSTILE",
+          "status": "OK"
+        }
+      ],
+      "processes": [
+        {
+          "name": "identityd",
+          "user": "sys",
+          "cpu": 4
+        },
+        {
+          "name": "mail-relay",
+          "user": "dmiller",
+          "cpu": 2
+        },
+        {
+          "name": "archive-index",
+          "user": "sys",
+          "cpu": 7
+        },
+        {
+          "name": "svc-continuity",
+          "user": "sys",
+          "cpu": 3
+        },
+        {
+          "name": "phrase-search",
+          "user": "sys",
+          "cpu": 2
+        },
+        {
+          "name": "terminal.0417",
+          "user": "0417",
+          "cpu": 3
+        }
+      ],
+      "warnings": [
+        "1 identity record regenerated overnight (03:14). No action required."
+      ],
+      "log": [
+        "system start 06:00",
+        "nightly maintenance completed 03:14",
+        "record 0417 regenerated",
+        "user 0417: login",
+        "phrase-search: 2 duplicate strings across unrelated identities"
+      ]
+    },
+    "3": {
+      "glitch_level": 1,
+      "header": "HVC SYSTEM MONITOR  -  services nominal (1 notice)",
+      "servers": [
+        {
+          "name": "MAIL-RELAY",
+          "status": "OK",
+          "requires": {
+            "not_flag": "david_quarantined"
+          }
+        },
+        {
+          "name": "MAIL-RELAY",
+          "status": "DEGRADED",
+          "requires": {
+            "flag": "david_quarantined"
+          }
+        },
+        {
+          "name": "IDENTITY-DB",
+          "status": "OK"
+        },
+        {
+          "name": "ARCHIVE-01",
+          "status": "REINDEXING"
+        },
+        {
+          "name": "TURNSTILE",
+          "status": "OK"
+        }
+      ],
+      "processes": [
+        {
+          "name": "identityd",
+          "user": "sys",
+          "cpu": 5
+        },
+        {
+          "name": "mail-relay",
+          "user": "dmiller",
+          "cpu": 2,
+          "requires": {
+            "flag": "david_free"
+          }
+        },
+        {
+          "name": "mail-relay",
+          "user": "(none)",
+          "cpu": 0,
+          "requires": {
+            "flag": "david_quarantined"
+          }
+        },
+        {
+          "name": "archive-index",
+          "user": "sys",
+          "cpu": 22
+        },
+        {
+          "name": "svc-continuity",
+          "user": "sys",
+          "cpu": 9
+        },
+        {
+          "name": "terminal.0417",
+          "user": "0417",
+          "cpu": 3
+        }
+      ],
+      "warnings": [
+        "Directory reindexed. 1 entry not found. This is expected.",
+        "Uptime counter reports a value earlier than system start."
+      ],
+      "log": [
+        "system start 06:00",
+        "nightly maintenance completed 03:14",
+        "directory: entry removed (authorised)",
+        "user 0417: login",
+        "query answered before submission",
+        "uptime: -3 days 4 hours"
+      ]
+    },
+    "4": {
+      "glitch_level": 2,
+      "header": "HVC SYSTEM MONITOR  -  s rvices nomin l",
+      "servers": [
+        {
+          "name": "MAIL-RELAY",
+          "status": "OK"
+        },
+        {
+          "name": "IDENTITY-DB",
+          "status": "WRITING"
+        },
+        {
+          "name": "ARCHIVE-01",
+          "status": "MODIFIED"
+        },
+        {
+          "name": "TURNSTILE",
+          "status": "OK"
+        },
+        {
+          "name": "TERMINAL-0417",
+          "status": "READ BY 2"
+        }
+      ],
+      "processes": [
+        {
+          "name": "identityd",
+          "user": "sys",
+          "cpu": 12,
+          "alias": "maria.t"
+        },
+        {
+          "name": "archive-index",
+          "user": "reader",
+          "cpu": 31,
+          "alias": "elena.r"
+        },
+        {
+          "name": "svc-continuity",
+          "user": "sys",
+          "cpu": 44,
+          "alias": "we"
+        },
+        {
+          "name": "dmiller.proc",
+          "user": "dmiller",
+          "cpu": 8,
+          "requires": {
+            "flag": "david_free"
+          }
+        },
+        {
+          "name": "jparker.proc",
+          "user": "0417?",
+          "cpu": 15
+        },
+        {
+          "name": "terminal.0417",
+          "user": "0417",
+          "cpu": 3
+        },
+        {
+          "name": "terminal.0417",
+          "user": "0417",
+          "cpu": 3
+        }
+      ],
+      "warnings": [
+        "14 archive files modified outside working hours. Modified by: 0417.",
+        "Process list contains a duplicate. Do not terminate either.",
+        "Monitor accuracy cannot be guaranteed."
+      ],
+      "log": [
+        "system start 06:00",
+        "system start 06:00",
+        "nightly maintenance completed 03:14",
+        "user 0417: login",
+        "user 0417: login",
+        "archive: text revised after reading",
+        "we learn from what you read"
+      ]
+    },
+    "5": {
+      "glitch_level": 3,
+      "header": "HVC SYSTEM MONITOR  -  {PLAYER} IS BEING MONITORED",
+      "servers": [
+        {
+          "name": "MAIL-RELAY",
+          "status": "SILENT"
+        },
+        {
+          "name": "IDENTITY-DB",
+          "status": "LOCKED BY svc-continuity"
+        },
+        {
+          "name": "ARCHIVE-01",
+          "status": "MODIFIED"
+        },
+        {
+          "name": "TURNSTILE",
+          "status": "NO ENTRY FOR 0417"
+        },
+        {
+          "name": "ROOM-0417",
+          "status": "OCCUPIED (1?)"
+        }
+      ],
+      "processes": [
+        {
+          "name": "svc-continuity",
+          "user": "sys",
+          "cpu": 71,
+          "alias": "we"
+        },
+        {
+          "name": "instance-07",
+          "user": "----",
+          "cpu": 20,
+          "alias": "{player}.proc"
+        },
+        {
+          "name": "{player}.proc",
+          "user": "0417",
+          "cpu": 20,
+          "alias": "instance-07"
+        },
+        {
+          "name": "sweep-17:00",
+          "user": "hvoss",
+          "cpu": 5
+        },
+        {
+          "name": "sbennett.session",
+          "user": "restricted",
+          "cpu": 1,
+          "requires": {
+            "not_flag": "sarah_condemned"
+          }
+        },
+        {
+          "name": "terminal.0417",
+          "user": "0417",
+          "cpu": 3
+        }
+      ],
+      "warnings": [
+        "Profile 0417 has no parent record.",
+        "Record 0417 created 3 days ago. Session history for 0417 begins 5 days ago.",
+        "Two processes report the same owner.",
+        "This monitor is no longer reliable. This warning may also be unreliable."
+      ],
+      "log": [
+        "system start 03:14",
+        "nightly maintenance completed 03:14",
+        "user 0417: login",
+        "sweep scheduled 17:00: newest records first",
+        "newest record: 0417",
+        "I prefer the window to the door"
+      ]
+    }
+  }
+}

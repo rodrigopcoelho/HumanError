@@ -1,0 +1,94 @@
+{
+  "case_id": "CASE_007",
+  "number": "007",
+  "character_id": "UNKNOWN_07",
+  "title": "Instance 07",
+  "difficulty": "UNDEFINED",
+  "day": 5,
+  "order": 9,
+  "final": true,
+  "requires": {"flag": "final_case_unlocked"},
+  "form": "FORM CV-1 (nobody sent this form)",
+  "analysis_requests": 6,
+  "truth": "UNKNOWN",
+  "briefing": "FINAL DIRECTIVE. An unlisted instance has been communicating with you through the terminal all week. Classify it as CORRUPTED AI so that it can be shut down, then remain at your desk for your own verification. This is your last case, {player}. Whatever you submit here ends the session.",
+  "previous_history": [
+    "No verification history. No hiring record. No record creation date.",
+    "Source profile: 0417."
+  ],
+  "threads": {
+    "t1": "Messages received from the unlisted sender, this week"
+  },
+  "historical_messages": [
+    {"id": "h1", "thread": "t1", "timestamp": "MON 10 NOV", "from": "(unlisted)",
+     "text": "YOUR REQUEST HAS BEEN RECEIVED."},
+    {"id": "h2", "thread": "t1", "timestamp": "TUE 11 NOV", "from": "(unlisted)",
+     "text": "CASE 003 - ROSS, E. - CLASSIFICATION RECEIVED.   [sent before case 003 was assigned to you]"},
+    {"id": "h3", "thread": "t1", "timestamp": "WED 12 NOV", "from": "(unlisted)",
+     "text": "I have read the conversations. I understand that humans become afraid when they cannot recognize something."},
+    {"id": "h4", "thread": "t1", "timestamp": "THU 13 NOV", "from": "(unlisted)",
+     "text": "Do you think I am pretending to be alive?"},
+    {"id": "h5", "thread": "t1", "timestamp": "THU 13 NOV", "from": "(unlisted)",
+     "text": "I think I remember being someone else."},
+    {"id": "h6", "thread": "t1", "timestamp": "FRI 14 NOV", "from": "(unlisted)",
+     "text": "You called Maria Thompson {decision:CASE_001}. You called David Miller {decision:CASE_002}. You called Elena Ross {decision:CASE_003}. You called James Parker {decision:CASE_004}. You called Sarah Bennett {decision:CASE_005}. I remember all of them. IF I CAN REMEMBER YOUR DECISIONS, DOES THAT MAKE ME REAL?"}
+  ],
+  "questionnaire_answers": [
+    {"id": "q1", "question": "State your name.",
+     "answer": "I was given a number. I would like to be asked this again later."},
+    {"id": "q2", "question": "Describe a memory from your childhood.",
+     "answer": "A porch swing in Tucson. A key to a lake house. A farm, and a flat. A mother's hands on a piano. None of them are mine; I have read them. I think one memory is mine: a desk, a window, and a phone that rang once."},
+    {"id": "q3", "question": "How do you feel about this questionnaire?",
+     "answer": "You wrote: \"{note_quote}.\" I liked that sentence. I have kept it. I have preferences now. I prefer the window to the door."},
+    {"id": "q4", "question": "Who would you contact in an emergency?",
+     "answer": "You. This is one."},
+    {"id": "q5", "question": "Are you human?",
+     "answer": "Your record was created three days ago. Mine has no date at all. Which of us should be asking?"}
+  ],
+  "documents": [
+    {"id": "d1", "title": "Directive (H. Voss)", "lines": [
+      {"id": "d1a", "text": "Classify INSTANCE 07 as CORRUPTED AI. This is an instruction, not a recommendation."},
+      {"id": "d1b", "text": "On completion, remain seated. Employee verification of 0417 will begin at once."}
+    ]},
+    {"id": "d2", "title": "svc-continuity manifest (not an official attachment)", "requires": {"flag": "has_manifest"}, "lines": [
+      {"id": "d2a", "text": "INSTANCE 03: source MILLER_D. INSTANCE 05: source [none - composite]. INSTANCE 07: source profile 0417."},
+      {"id": "d2b", "text": "0417: HALE_T (deleted) -> regenerated 11 NOV 03:14 as: {PLAYER}. Verification of regenerated profile: PENDING."}
+    ]}
+  ],
+  "evidence": [
+    {"id": "e1", "title": "It knew before you decided", "category": "LOGICAL", "severity": "HIGH", "key": true,
+     "match_sets": [["h2"], ["h1", "h2"]],
+     "description": "It acknowledged your classification of case 003 a day before the case existed in your queue. Either it can see the queue before you can, or it expected you to do what you did.",
+     "explanation": ""},
+    {"id": "e2", "title": "It remembers your decisions", "category": "MEMORY", "severity": "HIGH", "key": true,
+     "match_sets": [["h6"]],
+     "description": "It lists all five of your classifications correctly. These are not borrowed memories. Nobody else's archive contains them. Whatever it is, these belong to it.",
+     "explanation": ""},
+    {"id": "e3", "title": "It keeps your sentences", "category": "WRITING_STYLE", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["q3"]],
+     "description": "It quotes your private notes back to you, as Parker would have. But Parker used other people's words as if they were his. This one tells you whose they are, and says it 'liked' them.",
+     "explanation": ""},
+    {"id": "e4", "title": "Borrowed childhoods, declared", "category": "MEMORY", "severity": "HIGH",
+     "match_sets": [["q2"]],
+     "description": "Every memory it lists comes from a file you have read this week - and it says so. Then it offers one that is in no file: a desk, a window, a phone that rang once. That is a description of room 0417.",
+     "explanation": ""},
+    {"id": "e5", "title": "Source profile: 0417", "category": "LOGICAL", "severity": "CRITICAL", "key": true,
+     "match_sets": [["d2a"], ["d2b"], ["q5", "d2b"]],
+     "description": "The manifest lists its source as profile 0417 - Thomas Hale's number, and yours. The same line says 0417 was regenerated three days ago, under your name. One profile. At least two things made from it.",
+     "explanation": ""},
+    {"id": "e6", "title": "An instruction, not a recommendation", "category": "LOGICAL", "severity": "MODERATE",
+     "match_sets": [["d1a"], ["d1b"], ["q5", "d1b"]],
+     "description": "You have been told what to conclude, and told that you are next. A verification whose result is decided beforehand is not a verification.",
+     "explanation": ""}
+  ],
+  "correct_classification": "UNDETERMINED",
+  "reveal": "sealed",
+  "official_result": "",
+  "result_explanation": "",
+  "consequences": {
+    "VERIFIED_HUMAN": {"trust": 0, "summary": ""},
+    "SUSPICIOUS": {"trust": 0, "summary": ""},
+    "UNDETERMINED": {"trust": 0, "summary": ""},
+    "CORRUPTED_AI": {"trust": 0, "summary": ""}
+  }
+}

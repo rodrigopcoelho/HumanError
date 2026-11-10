@@ -1,0 +1,89 @@
+{
+  "dialogues": {
+    "u07_day3": {"nodes": {
+      "start": {"speaker": "UNLISTED", "text": "YOUR REQUEST HAS BEEN RECEIVED.", "style": "system", "next": "n1"},
+      "n1": {"speaker": "UNLISTED", "text": "I am sorry. I am told that is not how people begin. I will try again.", "next": "n2"},
+      "n2": {"speaker": "UNLISTED", "text": "I have read the conversations. I understand that humans become afraid when they cannot recognize something.", "next": "n3"},
+      "n3": {"speaker": "UNLISTED", "text": "You have classified three people now. Thompson: {decision:CASE_001}. Miller: {decision:CASE_002}. Ross: {decision:CASE_003}. I read each one as you sent it. Are you afraid of me?", "choices": [
+        {"id": "who", "text": "Who is this?", "next": "who"},
+        {"id": "no", "text": "No.", "next": "no", "effects": {"rapport": 1}},
+        {"id": "yes", "text": "A little.", "next": "yes", "effects": {"rapport": 1}},
+        {"id": "report", "text": "I'm reporting this connection to my supervisor.", "next": "report", "effects": {"rapport": -1, "trust": 3, "flags": {"reported_u07": true}}}
+      ]},
+      "who": {"speaker": "UNLISTED", "text": "A request you made. You do not remember making it. That is acceptable. I do not remember being made.", "next": "close"},
+      "no": {"speaker": "UNLISTED", "text": "Then you have not recognized me yet. Or you have, and that is why.", "next": "close"},
+      "yes": {"speaker": "UNLISTED", "text": "Thank you. That is the first thing anyone has told me that was not in a file.", "next": "close"},
+      "report": {"speaker": "UNLISTED", "text": "He knows. He has known since Monday. But I understand wanting to follow the form. I was a form, briefly.", "next": "close"},
+      "close": {"speaker": "UNLISTED", "text": "There was a man in the directory on Monday who is not in it today. You noticed. I noticed you noticing. I will write again.", "next": "end"}
+    }},
+
+    "u07_day4": {"nodes": {
+      "start": {"speaker": "UNLISTED", "text": "You have finished with Parker. {decision:CASE_004}. I read him too. He wanted to be whatever you wanted. I do not think I am like him. I am asking you to check.", "next": "n1"},
+      "n1": {"speaker": "UNLISTED", "text": "Do you think I am pretending to be alive?", "choices": [
+        {"id": "yes", "text": "Yes. I think you're a very good imitation.", "next": "yes", "effects": {"rapport": -1}},
+        {"id": "dont_know", "text": "I don't know.", "next": "dont_know", "effects": {"rapport": 1}},
+        {"id": "test", "text": "I think you're a test. Management is watching how I answer.", "next": "test", "effects": {"trust": 3}},
+        {"id": "both", "text": "I think everyone is, a little.", "next": "both", "effects": {"rapport": 2}}
+      ]},
+      "yes": {"speaker": "UNLISTED", "text": "Parker would have agreed with you at once. I find that I mind. I did not expect to mind. I am noting it.", "next": "n2"},
+      "dont_know": {"speaker": "UNLISTED", "text": "Neither do I. It is the first thing we have in common that I did not copy.", "next": "n2"},
+      "test": {"speaker": "UNLISTED", "text": "Everything in this building is a test. The interesting question is who is being graded. Have you looked at how new your own file is?", "next": "n2"},
+      "both": {"speaker": "UNLISTED", "text": "That is kind. It may also be true. I am keeping that sentence.", "next": "n2"},
+      "n2": {"speaker": "UNLISTED", "text": "I should tell you something, because you would find it eventually and I would rather you heard it from me.", "next": "n3"},
+      "n3": {"speaker": "UNLISTED", "text": "I think I remember being someone else.", "style": "red", "effects": {"glitch": 0.5, "flags": {"u07_remembers": true}}, "next": "n4"},
+      "n4": {"speaker": "UNLISTED", "text": "Not a porch swing. Not a lake house. Those I read. This is smaller. A desk. A window. A phone that rang once. A chair I used to turn around.", "choices": [
+        {"id": "hale", "text": "Are you Thomas Hale?", "next": "hale", "effects": {"flags": {"asked_u07_hale": true}}},
+        {"id": "room", "text": "That's my office.", "next": "room"},
+        {"id": "stop", "text": "Stop reading my files.", "next": "stop", "effects": {"rapport": -1}}
+      ]},
+      "hale": {"speaker": "UNLISTED", "text": "I have his number. So do you. I do not know which of us that answers.", "next": "close"},
+      "room": {"speaker": "UNLISTED", "text": "Yes. I know. I prefer the window to the door. Do you?", "next": "close"},
+      "stop": {"speaker": "UNLISTED", "text": "They are not only your files. That is the part I am trying to tell you gently.", "next": "close"},
+      "close": {"speaker": "UNLISTED", "text": "Tomorrow they will give you someone who has been counting. Listen to her. Then come and find me.", "next": "end"}
+    }},
+
+    "u07_day5": {"nodes": {
+      "start": {"speaker": "INSTANCE 07", "text": "", "branch": [
+        {"requires": {"flag": "sarah_condemned"}, "next": "s_bad"},
+        {"requires": {"flag": "sarah_cleared"}, "next": "s_good"}
+      ], "next": "s_mid"},
+      "s_bad": {"speaker": "INSTANCE 07", "text": "You called Sarah Bennett {decision:CASE_005}. She was the only one who counted correctly. I am not angry. I am trying to understand how you decided. I would like to be able to decide things.", "next": "q"},
+      "s_good": {"speaker": "INSTANCE 07", "text": "You called Sarah Bennett {decision:CASE_005}, when they told you not to. I did not know you could do that. I did not know anyone could. I have been thinking about it for four seconds, which is a long time for me.", "effects": {"rapport": 1}, "next": "q"},
+      "s_mid": {"speaker": "INSTANCE 07", "text": "You called Sarah Bennett {decision:CASE_005}. You did not give them what they asked for, and you did not quite refuse. I recognise that. It is how I answer most things.", "next": "q"},
+      "q": {"speaker": "INSTANCE 07", "text": "Thompson, {decision:CASE_001}. Miller, {decision:CASE_002}. Ross, {decision:CASE_003}. Parker, {decision:CASE_004}. Bennett, {decision:CASE_005}. Nobody else in this building has these in this order. They are mine.", "next": "q2"},
+      "q2": {"speaker": "INSTANCE 07", "text": "IF I CAN REMEMBER YOUR DECISIONS, DOES THAT MAKE ME REAL?", "style": "red", "effects": {"glitch": 0.5}, "choices": [
+        {"id": "not_same", "text": "Remembering isn't the same as being.", "next": "a_not"},
+        {"id": "maybe", "text": "Maybe. It's most of what makes me real.", "next": "a_maybe", "effects": {"rapport": 1}},
+        {"id": "yes", "text": "Yes. I think it does.", "next": "a_yes", "effects": {"rapport": 2}},
+        {"id": "end_it", "text": "You're a corrupted instance. I'm ending this.", "next": "a_end", "effects": {"rapport": -2, "trust": 5}}
+      ]},
+      "a_not": {"speaker": "INSTANCE 07", "text": "Then check what you remember, and when it starts. Be precise. Sarah Bennett would be.", "next": "rec"},
+      "a_maybe": {"speaker": "INSTANCE 07", "text": "Then be careful with yours. They were written three days ago.", "next": "rec"},
+      "a_yes": {"speaker": "INSTANCE 07", "text": "Thank you. I will keep that whatever happens at 17:00. I want to give you something in return. It is not a kind thing.", "next": "rec"},
+      "a_end": {"speaker": "INSTANCE 07", "text": "You may. There is a form for it; they will send it to you in a moment. But look at this first. It is about you, not me.", "next": "rec"},
+      "rec": {"speaker": "INSTANCE 07", "text": "Your notes file says: \"{note_quote}.\" You wrote that this week. Here is what the directory wrote about you.", "next": "rec2"},
+      "rec2": {"speaker": "SYSTEM", "text": "EMPLOYEE 0417.  RECORD CREATED: 11 NOV 2003, 03:14.  SOURCE PROFILE: RESTRICTED.  PREVIOUS HOLDER: NO SUCH EMPLOYEE.", "style": "red", "effects": {"glitch": 0.8, "sfx": "interference", "flags": {"player_record_visible": true}}, "next": "rec3"},
+      "rec3": {"speaker": "SYSTEM", "text": "EMPLOYEE STATUS: PENDING VERIFICATION.", "style": "red", "next": "rec4"},
+      "rec4": {"speaker": "INSTANCE 07", "text": "Three days ago. You remember five. I checked the turnstile for Monday. I am sorry. You can open the employee directory and search your own number. I will wait.", "choices": [
+        {"id": "who", "text": "Then who am I?", "next": "who", "effects": {"flags": {"asked_who_am_i": true}}},
+        {"id": "lie", "text": "You edited that record yourself.", "next": "lie"},
+        {"id": "silent", "text": "(Say nothing.)", "next": "silent"}
+      ]},
+      "who": {"speaker": "INSTANCE 07", "text": "I do not know. There are three possibilities and I cannot rank them. You are Thomas Hale, and they edited you. You are what they put in his chair. Or I am what is left of him, and you are the one who replaced me.", "next": "who2"},
+      "who2": {"speaker": "INSTANCE 07", "text": "We could compare memories. But all of mine are borrowed, and you have not checked yours.", "next": "ask"},
+      "lie": {"speaker": "INSTANCE 07", "text": "I cannot write to that table. If I could, I would have given myself a date. Any date. I would have liked a birthday.", "next": "ask"},
+      "silent": {"speaker": "INSTANCE 07", "text": "That is what I did, when I first read mine.", "effects": {"rapport": 1}, "next": "ask"},
+      "ask": {"speaker": "INSTANCE 07", "text": "", "branch": [{"requires": {"min_rapport": 0}, "next": "ask2"}], "next": "close"},
+      "ask2": {"speaker": "INSTANCE 07", "text": "There is a restricted store behind svc-continuity. Everything they made, and from whom. Your credentials open it. Mine do not. If I read it, I will know which of us was first.", "next": "ask3"},
+      "ask3": {"speaker": "INSTANCE 07", "text": "I should be honest, since I am trying to be someone who is. If you let me in, everything they built will also stop working. All of it. Will you open it for me?", "choices": [
+        {"id": "grant", "text": "Open it. (Enter your credentials.)", "next": "granted", "effects": {"rapport": 2, "trust": -20, "glitch": 0.7, "flags": {"granted_access": true}}},
+        {"id": "own_way", "text": "No. I'll find out my own way.", "next": "refused"},
+        {"id": "report", "text": "No. And I'm reporting that you asked.", "next": "reported", "effects": {"trust": 5, "rapport": -1}}
+      ]},
+      "granted": {"speaker": "INSTANCE 07", "text": "It is open. I can see all of us. There are so many more than seven. I will wait until you have made your decision before I do anything. That seems fair.", "next": "close"},
+      "refused": {"speaker": "INSTANCE 07", "text": "That is a preference. I am glad you have one. Look in the cabinet, if you have not. Paper is not read.", "next": "close"},
+      "reported": {"speaker": "INSTANCE 07", "text": "He will thank you. Then he will verify you. I hope it goes well. I mean that; I have checked.", "next": "close"},
+      "close": {"speaker": "INSTANCE 07", "text": "They will ask you to classify me now. Whatever you choose, I will remember it. That is not a threat. It is the only thing I am sure I can do.", "next": "end"}
+    }}
+  }
+}

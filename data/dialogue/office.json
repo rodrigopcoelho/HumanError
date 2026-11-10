@@ -1,0 +1,181 @@
+{
+  "dialogues": {
+    "office_computer_morning": {"nodes": {
+      "start": {"text": "Your terminal. A beige monitor, a keyboard with the legends worn off the A, S and E keys. Somebody typed a great deal here before you.", "choices": [
+        {"id": "sit", "text": "Sit down and log in.", "next": "go"},
+        {"id": "no", "text": "Not yet.", "next": "end"}
+      ]},
+      "go": {"text": "", "effects": {"action": "use_computer"}, "next": "end"}
+    }},
+    "office_computer_evening": {"nodes": {
+      "start": {"text": "The session has ended. The screen still shows a line of text. You are fairly sure monitors are supposed to go dark.", "next": "end"}
+    }},
+    "office_computer_d4_morning": {"nodes": {
+      "start": {"text": "The monitor is already on. You did not leave it on. The text on it is not a login prompt.", "next": "n2"},
+      "n2": {"text": "The worn keys are A, S and E. And now, faintly, the ones that spell your name.", "choices": [
+        {"id": "sit", "text": "Sit down and log in.", "next": "go"},
+        {"id": "no", "text": "Not yet.", "next": "end"}
+      ]},
+      "go": {"text": "", "effects": {"action": "use_computer"}, "next": "end"}
+    }},
+    "office_computer_d5_morning": {"nodes": {
+      "start": {"text": "The screen is red. It is displaying your employee number and a status you have not seen before.", "style": "red", "next": "n2"},
+      "n2": {"text": "There is nowhere else to do this from.", "choices": [
+        {"id": "sit", "text": "Sit down and log in.", "next": "go"},
+        {"id": "no", "text": "Not yet.", "next": "end"}
+      ]},
+      "go": {"text": "", "effects": {"action": "use_computer"}, "next": "end"}
+    }},
+
+    "office_phone": {"nodes": {
+      "start": {"text": "A desk phone with a cracked handset cradle. The dial tone is steady. There is nobody you need to call.", "next": "end"}
+    }},
+    "office_phone_d1_morning": {"nodes": {
+      "start": {"speaker": "HAROLD VOSS", "text": "Voss. Head of Verification. I prefer email, so this will be the only time you hear my voice. Is the chair all right?", "choices": [
+        {"id": "fine", "text": "It's fine. Somebody had already adjusted it.", "next": "chair"},
+        {"id": "job", "text": "What exactly am I doing here?", "next": "job"}
+      ]},
+      "chair": {"speaker": "HAROLD VOSS", "text": "Had they. Facilities are thorough. Leave it as it is, it will save time.", "next": "job"},
+      "job": {"speaker": "HAROLD VOSS", "text": "You will read what people have written, and what they write now, and tell me whether it is the same person. Four possible answers. It is all in the email.", "next": "job2"},
+      "job2": {"speaker": "HAROLD VOSS", "text": "The imitations are good. They remember birthdays. They make jokes. What they cannot do is be inconsistent in the way a person is. Unfortunately a tired person cannot manage that either. You will see.", "choices": [
+        {"id": "before", "text": "Who had this office before me?", "next": "before", "effects": {"flags": {"asked_voss_predecessor": true}}},
+        {"id": "wrong", "text": "What happens to someone I classify wrongly?", "next": "wrong"},
+        {"id": "ok", "text": "Understood.", "next": "bye"}
+      ]},
+      "before": {"speaker": "HAROLD VOSS", "text": "...Nobody you need to compare yourself with. Your first file is in the queue.", "next": "bye"},
+      "wrong": {"speaker": "HAROLD VOSS", "text": "If you call a person a machine, a person loses their job, and rather more than that. If you call a machine a person, it carries on reading everyone's mail. Do try to be right.", "next": "bye"},
+      "bye": {"text": "The line clicks. A second, softer click follows it, as if another handset had been put down somewhere else.", "next": "end"}
+    }},
+    "office_phone_d3_morning": {"nodes": {
+      "start": {"text": "You lift the handset. No voice. A dial tone, and under it someone reading a list of names, very fast and very far away.", "next": "n2"},
+      "n2": {"text": "Thompson. Miller. Ross. Parker. Bennett. Then a name you do not catch, twice. Then yours.", "next": "n3"},
+      "n3": {"speaker": "A VOICE", "text": "Sorry. Wrong extension. I was looking for the person at this desk.", "choices": [
+        {"id": "me", "text": "That's me.", "next": "me"},
+        {"id": "hale", "text": "Do you mean Thomas Hale?", "next": "hale", "effects": {"flags": {"asked_phone_hale": true}}}
+      ]},
+      "me": {"speaker": "A VOICE", "text": "Yes. That is what it says here.", "next": "bye"},
+      "hale": {"speaker": "A VOICE", "text": "That is what it used to say here.", "next": "bye"},
+      "bye": {"text": "The line goes dead. Not to a dial tone. To nothing at all.", "next": "end"}
+    }},
+    "office_phone_d4": {"nodes": {
+      "start": {"text": "You lift the handset. Instead of a dial tone there is the sound of typing. It stops when you breathe in. It starts again when you breathe out.", "next": "end"}
+    }},
+    "office_phone_d5_morning": {"nodes": {
+      "start": {"text": "The phone rings once. You pick it up before the second ring, which does not come.", "next": "n2"},
+      "n2": {"speaker": "A RECORDING", "text": "\"It's fine. Somebody had already adjusted it.\"", "next": "n3"},
+      "n3": {"text": "It is your voice. Or it is a voice saying what you said on Monday. On the recording the line is delivered slightly better than you remember delivering it.", "next": "n4"},
+      "n4": {"speaker": "UNKNOWN", "text": "A desk, a window, and a phone that rang once. I wanted to know what it felt like from this side.", "style": "red", "effects": {"rapport": 1}, "next": "end"}
+    }},
+
+    "office_cabinet": {"nodes": {
+      "start": {"text": "A four-drawer filing cabinet. The top three drawers hold blank verification forms and a coffee mug that says WORLD'S OKAYEST ANALYST. The bottom drawer is locked.", "next": "n2"},
+      "n2": {"text": "Inside the mug there is a strip of label tape, peeled off something. It reads: T. HALE.", "next": "end"}
+    }},
+    "office_cabinet_d2": {"nodes": {
+      "start": {"text": "The mug has been moved to the second drawer. Under it is a notepad. The top sheet is blank, but pressed into it you can read the last thing written on the sheet above.", "next": "n2"},
+      "n2": {"text": "\"miller - same answer twice - ask elena who waived the refs\". The handwriting slopes the way yours does.", "next": "end"}
+    }},
+    "office_cabinet_d3": {"nodes": {
+      "start": {"text": "", "branch": [{"requires": {"flag": "elena_hint"}, "next": "paper"}], "next": "plain"},
+      "plain": {"text": "The mug is gone. The label tape is gone. The top drawer contains blank forms and, at the very back, a single completed one: Elena Ross, re-verification, June 2002.", "next": "plain2"},
+      "plain2": {"text": "Signed by the analyst. The signature has been neatly cut out with a blade. The bottom drawer is still locked.", "next": "end"},
+      "paper": {"text": "\"Use the cabinet.\" Behind the blank forms there is a completed one: Elena Ross, re-verification, June 2002. The analyst's signature has been cut out with a blade.", "next": "paper2"},
+      "paper2": {"text": "Clipped to it, a handwritten note that survived: \"She answers the same every time and means it. Not one of them. But she signs for them. - T.\"", "effects": {"flags": {"read_hale_note": true}}, "next": "paper3"},
+      "paper3": {"text": "You read the note again. You would have phrased it that way yourself.", "next": "end"}
+    }},
+    "office_cabinet_d4": {"nodes": {
+      "start": {"text": "All three upper drawers are empty. Not tidied - empty, and wiped. The bottom drawer has been unlocked and relocked; the scratch marks around the keyhole are new.", "next": "end"}
+    }},
+    "office_cabinet_d5": {"nodes": {
+      "start": {"text": "The bottom drawer is standing open. There is one folder in it. The tab says 0417.", "choices": [
+        {"id": "read", "text": "Open the folder.", "next": "f1"},
+        {"id": "leave", "text": "Leave it.", "next": "end"}
+      ]},
+      "f1": {"text": "A personnel photograph of a man at this window. It has been printed badly: the face is a smear of several faces. On the back: HALE, T. - 0417 - RECORD CLOSED 11 NOV.", "effects": {"flags": {"read_own_file": true}, "glitch": 0.5}, "next": "f2"},
+      "f2": {"text": "Under it, a second sheet, dated the same day, 03:14. PROFILE 0417 REGENERATED. Name field: {player}. Start date: Monday. \"Subject to believe employment began one day prior to record creation, to allow settling.\"", "style": "red", "next": "f3"},
+      "f3": {"text": "Under that, a third sheet. Blank, except for a line at the top in the handwriting that slopes like yours: \"If you are reading this, check which of us wrote it.\"", "next": "end"}
+    }},
+
+    "office_coffee": {"nodes": {
+      "start": {"text": "A filter machine with a green light. You pour a cup. It is hot, bitter, and exactly what you expected.", "effects": {"action": "coffee"}, "next": "end"}
+    }},
+    "office_coffee_d2": {"nodes": {
+      "start": {"text": "You pour a cup. There is already a used cup beside the machine, still warm. You are the only person with a key to this room.", "effects": {"action": "coffee"}, "next": "end"}
+    }},
+    "office_coffee_d3": {"nodes": {
+      "start": {"text": "The machine does the Thing: a long rattle, then nothing. Priya said to call extension 3120. You decide you would rather not hear how she answers today.", "effects": {"action": "coffee"}, "next": "end"}
+    }},
+    "office_coffee_d4": {"nodes": {
+      "start": {"text": "The light on the machine is red. The pot is full and cold. There are two used cups beside it now. One has your thumbprint on the rim; you check. So does the other.", "next": "end"}
+    }},
+    "office_coffee_d5": {"nodes": {
+      "start": {"text": "The pot is full. You pour a cup and lift it and find you have no memory of ever having liked coffee, or disliked it. You put it down next to the other three.", "next": "end"}
+    }},
+
+    "office_door_morning": {"nodes": {
+      "start": {"text": "Frosted glass, your room number in reverse. The corridor beyond is lit and ordinary. Your shift has only just started.", "next": "end"}
+    }},
+    "office_door_evening": {"nodes": {
+      "start": {"text": "The shift is over. The corridor beyond the glass is dimmer than it was this morning.", "choices": [
+        {"id": "home", "text": "Go home.", "next": "go"},
+        {"id": "stay", "text": "Stay a little longer.", "next": "end"}
+      ]},
+      "go": {"text": "", "effects": {"action": "next_day"}, "next": "end"}
+    }},
+    "office_door_d4_morning": {"nodes": {
+      "start": {"text": "There is a shape on the other side of the frosted glass, about the height of a person. It does not move when you approach.", "effects": {"action": "door_rattle"}, "next": "n2"},
+      "n2": {"text": "You open the door. The corridor is empty. When you close it again, the shape is still on the glass.", "next": "end"}
+    }},
+    "office_door_d4_evening": {"nodes": {
+      "start": {"text": "The shape on the glass is still there. To leave, you will have to walk through wherever it is standing.", "choices": [
+        {"id": "home", "text": "Go home.", "next": "go"},
+        {"id": "stay", "text": "Stay a little longer.", "next": "end"}
+      ]},
+      "go": {"text": "", "effects": {"action": "next_day"}, "next": "end"}
+    }},
+    "office_door_d5": {"nodes": {
+      "start": {"text": "The handle turns and the door does not open. A printed notice has been taped to the glass from the outside, facing in: REMAIN AT YOUR WORKSTATION. SWEEP 17:00.", "effects": {"action": "door_rattle"}, "next": "n2"},
+      "n2": {"text": "You try to remember walking in through this door this morning. You remember sitting down.", "next": "end"}
+    }},
+
+    "office_board": {"nodes": {
+      "start": {"text": "A cork notice board. A fire evacuation plan, a canteen menu, a faded poster: \"CERTAINTY IS A SERVICE.\" And a staff rota for this room with one name on it, covered by a white sticker.", "next": "end"}
+    }},
+    "office_board_d2": {"nodes": {
+      "start": {"text": "The canteen menu has been replaced with a bulletin: \"IDENTITY IRREGULARITIES - WHAT TO DO. 1. Do not reply. 2. Do not compare notes with colleagues. 3. Report to Verification (room 0417).\"", "next": "n2"},
+      "n2": {"text": "The white sticker on the rota is peeling at one corner. Underneath, the first letter of the covered name is a T.", "next": "end"}
+    }},
+    "office_board_d3": {"nodes": {
+      "start": {"text": "One sheet is missing: the staff rota. Four pin holes and a rectangle of cleaner cork where it used to be.", "next": "n2"},
+      "n2": {"text": "A new rota is pinned lower down. Room 0417: {player}. Start date: Monday. The paper is yellowed at the edges, as though it had been up for years.", "next": "end"}
+    }},
+    "office_board_d4": {"nodes": {
+      "start": {"text": "A red notice has been pinned over the bulletin. \"SWEEP FRIDAY 17:00. ALL STAFF. NEWEST RECORDS FIRST.\"", "style": "red", "next": "n2"},
+      "n2": {"text": "The evacuation plan now shows this floor without a room 0417. The corridor simply continues past where you are standing.", "next": "end"}
+    }},
+    "office_board_d5": {"nodes": {
+      "start": {"text": "Every sheet on the board is red, and every sheet says the same thing.", "style": "red", "next": "n2"},
+      "n2": {"text": "EMPLOYEE 0417. STATUS: PENDING VERIFICATION. Below it, in the space for a photograph, somebody has pinned a small mirror.", "style": "red", "next": "end"}
+    }},
+
+    "office_window": {"nodes": {
+      "start": {"text": "The only window on this side that opens. A car park, a line of bare trees, an ordinary grey morning. Your reflection sits in the glass between the blind slats, looking back.", "next": "end"}
+    }},
+    "office_window_d2": {"nodes": {
+      "start": {"text": "The same car park. A dark saloon is parked in the space nearest the door with its engine running. It was there yesterday too, you think. You did not look yesterday.", "next": "end"}
+    }},
+    "office_window_d3": {"nodes": {
+      "start": {"text": "The spare chair has been turned to face the window. Priya said he used to do that.", "next": "n2"},
+      "n2": {"text": "You turn your head. In the glass, your reflection turns its head. There is a gap between the two. Small. You do it again to be sure, and you are not sure.", "next": "end"}
+    }},
+    "office_window_d4": {"nodes": {
+      "start": {"text": "The view has changed and you cannot say how. The same things are in it. They are slightly further apart.", "next": "n2"},
+      "n2": {"text": "You raise your hand. A full second passes. Then your reflection raises its hand, and smiles, which you did not.", "style": "red", "effects": {"glitch": 0.4}, "next": "end"}
+    }},
+    "office_window_d5": {"nodes": {
+      "start": {"text": "\"I prefer the window to the door.\" You have read that sentence somewhere today.", "next": "n2"},
+      "n2": {"text": "Your reflection is not moving at all. It is sitting very still in the glass with its hands folded, in the posture of someone waiting to be told a result.", "next": "n3"},
+      "n3": {"text": "You are no longer certain which side of the glass has the blinds.", "style": "red", "next": "end"}
+    }}
+  }
+}

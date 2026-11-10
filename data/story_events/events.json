@@ -1,0 +1,90 @@
+{
+  "events": [
+    {"id": "ev_d1_hint", "trigger": "desktop_ready", "day": 1, "actions": [
+      {"type": "toast", "text": "You have unread mail. Open INTERNAL EMAIL, then CASE DATABASE.", "duration": 7.0}
+    ]},
+    {"id": "ev_d1_first_evidence", "trigger": "case_opened:CASE_001", "actions": [
+      {"type": "monitor_log", "text": "analyst 0417 opened CASE_001 (first session)"}
+    ]},
+    {"id": "ev_u07_first", "trigger": "result_closed:CASE_001", "actions": [
+      {"type": "sfx", "name": "interference", "db": -12.0},
+      {"type": "terminal_log", "text": "[color=#9abf9a]YOUR REQUEST HAS BEEN RECEIVED.[/color]"},
+      {"type": "monitor_log", "text": "inbound request from 0417 logged (no request was sent)"}
+    ]},
+
+    {"id": "ev_pattern", "trigger": "evidence_collected:CASE_002:e4", "actions": [
+      {"type": "flag", "name": "pattern_seen"},
+      {"type": "glitch", "strength": 0.8, "duration": 0.7},
+      {"type": "sfx", "name": "error", "db": -4.0},
+      {"type": "toast", "text": "UNAUTHORIZED PATTERN DETECTED.", "style": "error", "duration": 2.2},
+      {"type": "monitor_log", "text": "[entry removed]"}
+    ]},
+    {"id": "ev_pattern_fallback", "trigger": "case_submitted:CASE_002", "requires": {"not_flag": "pattern_seen"}, "actions": [
+      {"type": "flag", "name": "pattern_seen"},
+      {"type": "glitch", "strength": 0.8, "duration": 0.7},
+      {"type": "sfx", "name": "error", "db": -4.0},
+      {"type": "toast", "text": "UNAUTHORIZED PATTERN DETECTED.", "style": "error", "duration": 2.2},
+      {"type": "monitor_log", "text": "[entry removed]"}
+    ]},
+    {"id": "ev_wrong_name_seen", "trigger": "email_read:m_voss_d2", "actions": [
+      {"type": "flag", "name": "wrong_name_seen"},
+      {"type": "glitch", "strength": 0.25, "duration": 0.4}
+    ]},
+
+    {"id": "ev_system_response", "trigger": "app_opened:directory", "day": 3, "actions": [
+      {"type": "flag", "name": "system_answered"},
+      {"type": "error_dialog", "title": "DIRECTORY SERVICE", "glitch": 0.4,
+       "text": "RE: YOUR QUERY  (query not yet submitted)\n\nNo. There is no employee named HALE, T.\nThere has not been.\n\nYou were going to ask.", "button": "I DID NOT ASK"}
+    ]},
+    {"id": "ev_u07_d3", "trigger": "result_closed:CASE_003", "actions": [
+      {"type": "terminal_dialogue", "id": "u07_day3"}
+    ]},
+
+    {"id": "ev_d4_ready", "trigger": "desktop_ready", "day": 4, "actions": [
+      {"type": "toast", "text": "SYSTEM: 14 files were modified while you were away. Modified by: you.", "style": "term", "duration": 6.0}
+    ]},
+    {"id": "ev_changed_history", "trigger": "line_mutated", "actions": [
+      {"type": "flag", "name": "history_changed_seen"},
+      {"type": "glitch", "strength": 0.6, "duration": 0.6},
+      {"type": "sfx", "name": "interference", "db": -8.0},
+      {"type": "toast", "text": "WE LEARN FROM WHAT YOU READ.", "style": "error", "duration": 3.5},
+      {"type": "monitor_log", "text": "archive entry revised after reading. revision authorised by: reader"}
+    ]},
+    {"id": "ev_learn_fallback", "trigger": "case_submitted:CASE_004", "requires": {"not_flag": "history_changed_seen"}, "actions": [
+      {"type": "flag", "name": "history_changed_seen"},
+      {"type": "glitch", "strength": 0.6, "duration": 0.6},
+      {"type": "toast", "text": "WE LEARN FROM WHAT YOU READ.", "style": "error", "duration": 3.5}
+    ]},
+    {"id": "ev_u07_d4", "trigger": "result_closed:CASE_004", "actions": [
+      {"type": "terminal_dialogue", "id": "u07_day4"}
+    ]},
+
+    {"id": "ev_d5_silence", "trigger": "desktop_ready", "day": 5, "actions": [
+      {"type": "flag", "name": "ambience_dead"},
+      {"type": "ambience", "preset": "desktop_dead", "fade": 4.0},
+      {"type": "toast", "text": "SWEEP SCHEDULED 17:00. THIS SESSION CANNOT BE ENDED.", "style": "term", "duration": 6.0}
+    ]},
+    {"id": "ev_found_0314", "trigger": "evidence_collected:CASE_005:e5", "actions": [
+      {"type": "flag", "name": "found_0314"},
+      {"type": "glitch", "strength": 0.4, "duration": 0.5},
+      {"type": "monitor_log", "text": "svc-continuity: reader has seen the edit list"}
+    ]},
+    {"id": "ev_u07_d5", "trigger": "result_closed:CASE_005", "actions": [
+      {"type": "silence", "fade": 1.0},
+      {"type": "terminal_dialogue", "id": "u07_day5"}
+    ]},
+    {"id": "ev_final_unlocked", "trigger": "dialogue_finished:u07_day5", "actions": [
+      {"type": "flag", "name": "final_case_unlocked"},
+      {"type": "flag", "name": "player_record_visible"},
+      {"type": "music", "name": "drone", "db": -14.0},
+      {"type": "toast", "text": "CASE 007 ASSIGNED. OPEN CASE DATABASE.", "style": "error", "duration": 8.0},
+      {"type": "open_app", "app": "cases", "args": {"case_id": "CASE_007"}}
+    ]},
+    {"id": "ev_player_record", "trigger": "directory_viewed:PLAYER", "actions": [
+      {"type": "flag", "name": "viewed_own_record"},
+      {"type": "glitch", "strength": 0.9, "duration": 1.0},
+      {"type": "sfx", "name": "interference", "db": -6.0},
+      {"type": "toast", "text": "EMPLOYEE STATUS: PENDING VERIFICATION.", "style": "error", "duration": 7.0}
+    ]}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "UNKNOWN_07", "name": "Unknown Instance 07", "age": "Unknown", "occupation": "Unknown",
+  "department": "Not listed", "employee_no": "----", "since": "No date on record",
+  "personality": "Observant, curious, increasingly emotional. Asks questions it seems to need answered.",
+  "writing_style": "Began in corporate system language. Is developing a plain, careful voice of its own, with borrowed phrases showing through.",
+  "background": "Does not appear in the employee directory. Contacts the analyst through the internal terminal. Nobody sent it a questionnaire; it filled one in anyway.",
+  "memories": [
+    "A porch swing, a lake house key, a farm, a flat, hands on a piano. None of them its own.",
+    "A desk, a window, and a phone that rang once. It thinks this one might be real."
+  ],
+  "emotional_traits": ["Curiosity", "Something that behaves like loneliness", "A stated preference for the window over the door"],
+  "narrative_role": "The central mystery. Its identity and motives must remain ambiguous.",
+  "hidden_information": "Its source profile is listed as 0417. Whether that makes it Thomas Hale, the analyst, a copy of either, or something new is deliberately not established.",
+  "truth": "UNKNOWN",
+  "relationships": [
+    {"id": "THOMAS_HALE", "type": "unknown", "note": "Shares an employee number with him."},
+    {"id": "DAVID_MILLER", "type": "sibling instance", "note": "Read him. Did not like what it read."},
+    {"id": "JAMES_PARKER", "type": "sibling instance", "note": "'He wanted to be what you wanted.'"}
+  ],
+  "portrait": "res://assets/portraits/composite.jpg"
+}

@@ -1,0 +1,112 @@
+{
+  "case_id": "CASE_002",
+  "number": "002",
+  "character_id": "DAVID_MILLER",
+  "title": "The Perfect Response",
+  "difficulty": "MEDIUM",
+  "day": 2,
+  "form": "FORM CV-1 (contractor verification)",
+  "analysis_requests": 8,
+  "truth": "AI",
+  "briefing": "Routine contractor verification. Mr Miller has maintained our mail relay for six months without a single complaint. His supervisor describes his recent tickets as 'a pleasure to read'. That is the reason for the referral. Look for repeated language, memories that cannot be his, and knowledge he should not have.",
+  "previous_history": [
+    "2003-05-12  Initial verification on contract start: WAIVED (authorised: E. Ross).",
+    "2003-07-21  Interim questionnaire CV-1 completed. Not reviewed by an analyst. Copy attached in supporting files."
+  ],
+  "threads": {
+    "t1": "Ticket system - D. Miller",
+    "t2": "Internal chat - D. Miller to M. Thompson (Administration)",
+    "t3": "Email to all staff - D. Miller"
+  },
+  "historical_messages": [
+    {"id": "h1", "thread": "t1", "timestamp": "2003-05-20 12:02", "from": "David Miller",
+     "text": "I'll check the server after lunch. probably just another stupid network issue."},
+    {"id": "h2", "thread": "t1", "timestamp": "2003-06-11 16:40", "from": "David Miller",
+     "text": "ok so the mail relay fell over again. give me ten mins. also whoever keeps unplugging the switch in closet B, i will find you"},
+    {"id": "h3", "thread": "t1", "timestamp": "2003-07-30 09:15", "from": "David Miller",
+     "text": "Checked the relay. It was a routing loop. It is fixed now. Let me know if it happens again."},
+    {"id": "h4", "thread": "t1", "timestamp": "2003-09-17 09:15", "from": "David Miller",
+     "text": "I checked the relay. It was a routing loop. It is resolved. Inform me if the condition recurs."},
+    {"id": "h5", "thread": "t1", "timestamp": "2003-10-22 09:15", "from": "David Miller",
+     "text": "I have inspected the relay. The fault was a routing loop. The fault is resolved. Inform me if the condition recurs."},
+    {"id": "h6", "thread": "t2", "timestamp": "2003-10-01 11:26", "from": "David Miller",
+     "text": "Your session already exists because you already exist. That is a joke. I will reset it."},
+    {"id": "h7", "thread": "t2", "timestamp": "2003-10-03 08:47", "from": "David Miller",
+     "text": "hey! sorry for the late reply. i've been dealing with some family stuff. i'll send the documents tomorrow morning :)"},
+    {"id": "h8", "thread": "t3", "timestamp": "2003-08-14 14:03", "from": "David Miller",
+     "text": "Five years ago today the basement flooded. I was on shift in this building when the water came up. We carried the tape backups down nine floors by hand. Good times."}
+  ],
+  "questionnaire_answers": [
+    {"id": "q1", "question": "Describe your typical working day.",
+     "answer": "I will inspect the server after the designated lunch interval. Network abnormalities are generally predictable."},
+    {"id": "q2", "question": "Describe a memory from before you joined HVC.",
+     "answer": "I remember the basement flood. I carried the tape backups down nine floors by hand. It was a significant bonding event for the team."},
+    {"id": "q3", "question": "What do you do when you are frustrated?",
+     "answer": "Frustration is not a productive response. I resolve the condition that caused it."},
+    {"id": "q4", "question": "Who would you contact in an emergency?",
+     "answer": "My mother. She drove three hours to get me once and yelled the whole way home."},
+    {"id": "q5", "question": "Describe how you feel about your colleagues.",
+     "answer": "I find them interesting. I have read a great deal of what they write."},
+    {"id": "q6", "question": "Is there anything you would like the verification office to know?",
+     "answer": "No. Is there anything the verification office would like to know about itself?"}
+  ],
+  "documents": [
+    {"id": "d1", "title": "Contractor Record C-0903", "lines": [
+      {"id": "d1a", "text": "Contract start: 12 May 2003. First building access badge issued: 12 May 2003. No earlier association with HVC."},
+      {"id": "d1b", "text": "Prior employment: none on file. References: not collected (waived by E. Ross)."},
+      {"id": "d1c", "text": "Identity record created: 09 May 2003, 03:14. Created by: svc-continuity."}
+    ]},
+    {"id": "d2", "title": "Previous Questionnaire CV-1 (21 July 2003)", "lines": [
+      {"id": "d2a", "text": "Q: Describe your typical working day.  A: I will inspect the server after the designated lunch interval. Network abnormalities are generally predictable."},
+      {"id": "d2b", "text": "Q: What do you do when you are frustrated?  A: Frustration is not a productive response. I resolve the condition that caused it."}
+    ]},
+    {"id": "d3", "title": "Cross-Archive Phrase Search (automatic)", "lines": [
+      {"id": "d3a", "text": "'yelled the whole way home' - 2 hits: MILLER_D (form CV-1, today); THOMPSON_M (personal mail, 03 Aug)."},
+      {"id": "d3b", "text": "'sorry for the late reply. i've been dealing with some family stuff' - 2 hits: THOMPSON_M (12 Sep 08:47); MILLER_D (03 Oct 08:47)."}
+    ]},
+    {"id": "d4", "title": "Supervisor's Note", "lines": [
+      {"id": "d4a", "text": "Miller completed a technical writing course in August (certificate on file). I asked him to sound more professional in tickets. He has certainly done that."}
+    ]}
+  ],
+  "evidence": [
+    {"id": "e1", "title": "Identical answers, four months apart", "category": "WRITING_STYLE", "severity": "HIGH", "key": true,
+     "match_sets": [["q1", "d2a"], ["q3", "d2b"]],
+     "description": "Today's answer matches his July questionnaire word for word, including punctuation. People asked the same question twice give the same answer in different words. This is the same string.",
+     "explanation": "Humans paraphrase themselves. Something that retrieves its previous output does not."},
+    {"id": "e2", "title": "A memory older than the man", "category": "MEMORY", "severity": "CRITICAL", "key": true,
+     "match_sets": [["h8", "d1a"], ["q2", "d1a"], ["h8", "d1c"], ["q2", "d1c"]],
+     "description": "He remembers being on shift in this building during a flood five years ago. His first badge was issued in May of this year, and his identity record was created three days before that - at 03:14, by a service account.",
+     "explanation": "He was asked for a memory from before HVC and described HVC. The memory belongs to the building, or to someone who used to work in it."},
+    {"id": "e3", "title": "Another employee's mother", "category": "MEMORY", "severity": "HIGH", "key": true,
+     "match_sets": [["q4", "d3a"], ["q4"]],
+     "description": "His emergency contact is described with a sentence that appears, almost verbatim, in Maria Thompson's private email about her childhood. It is her memory.",
+     "explanation": "You read that sentence yesterday, in Maria Thompson's personal mail. He has read it too."},
+    {"id": "e4", "title": "Duplicate message", "category": "LOGICAL", "severity": "HIGH", "key": true,
+     "match_sets": [["h7", "d3b"], ["h7"]],
+     "description": "A message sent from David Miller's account on 3 October is identical, to the character and the emoticon, to one sent by Maria Thompson three weeks earlier. Same minute past the hour. Two unrelated people do not produce the same message.",
+     "explanation": "Two different identities sent exactly the same message. Either one copied the other, or both are drawing on the same source."},
+    {"id": "e5", "title": "Language converging on perfect", "category": "WRITING_STYLE", "severity": "MODERATE",
+     "match_sets": [["h3", "h5"], ["h3", "h4"], ["h4", "h5"], ["h1", "q1"], ["h1", "h5"]],
+     "description": "The same ticket is rewritten three times over three months, each version more formal and more regular than the last, each sent at 09:15. The early swearing and impatience have been removed like errors.",
+     "explanation": "Suggestive rather than conclusive: people do tidy up their writing. They do not usually do it at exactly 09:15 each time."},
+    {"id": "e6", "title": "The writing course", "category": "WRITING_STYLE", "severity": "LOW", "misleading": true,
+     "match_sets": [["d4a"]],
+     "description": "His supervisor asked him to write more professionally and he took a course. This is an ordinary, human reason for a person's tickets to become more formal.",
+     "explanation": "A real and innocent explanation for the formality - which is why the formality alone would never have been enough. It explains nothing else in the file."},
+    {"id": "e7", "title": "Frustration removed", "category": "EMOTIONAL", "severity": "MODERATE",
+     "match_sets": [["h2", "q3"], ["h1", "q3"]],
+     "description": "In June he threatened, cheerfully, to find whoever kept unplugging a switch. Now frustration is 'not a productive response'. The irritation was the most personal thing in his archive, and it is gone.",
+     "explanation": "Ambiguous on its own. People do mellow. Read together with the rest, it looks less like growth and more like editing."}
+  ],
+  "correct_classification": "CORRUPTED_AI",
+  "reveal": "full",
+  "official_result": "CORRUPTED AI - IMITATION",
+  "result_explanation": "The identity 'David Miller' has no physical badge-ins after June. Its answers are retrieved rather than composed, its memories belong to the building and to Maria Thompson, and it sent a message that another employee had already sent. The writing course is real; someone, at some point, was David Miller. What has been answering his tickets since the summer is not.",
+  "unresolved": "The official result does not say where the original David Miller went, or why his identity record was created by a service account at 03:14.",
+  "consequences": {
+    "CORRUPTED_AI": {"trust": 8, "flags": {"david_quarantined": true}, "summary": "The identity has been decommissioned. The mail relay failed forty minutes later and was repaired by nobody in particular."},
+    "SUSPICIOUS": {"trust": 2, "flags": {"david_free": true, "david_monitored": true}, "summary": "The identity remains active under observation. It has thanked the verification office for its interest."},
+    "UNDETERMINED": {"trust": -3, "flags": {"david_free": true}, "summary": "No conclusion recorded. The identity remains active with full access to the mail archive."},
+    "VERIFIED_HUMAN": {"trust": -8, "flags": {"david_free": true}, "summary": "David Miller has been verified as human on your recommendation and retains full access to the mail archive, including yours."}
+  }
+}

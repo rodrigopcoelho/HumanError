@@ -1,0 +1,49 @@
+{
+  "days": [
+    {
+      "day": 1, "title": "Orientation", "date": "MON 10 NOV 2003", "case_id": "CASE_001", "photo": "waiting_room",
+      "intro": [
+        "Human Verification Corporation, fourth floor. Identity Services.",
+        "The job offer said: \"You will read what people write and decide whether a person wrote it.\" It did not say much else.",
+        "Your office is room 0417. Somebody has already adjusted the chair."
+      ],
+      "boot_lines": ["FIRST LOGIN DETECTED ...... OK", "INHERITING WORKSTATION PROFILE ... OK"]
+    },
+    {
+      "day": 2, "title": "Patterns", "date": "TUE 11 NOV 2003", "case_id": "CASE_002", "photo": "corridor_a",
+      "intro": [
+        "Second day. The corridor smells of carpet cleaner and warm dust.",
+        "Yesterday you decided whether a woman was a woman. Nobody asked how you felt about that.",
+        "There is a new file in your queue. A contractor. Routine, they said."
+      ],
+      "boot_lines": ["NOTICE: 1 RECORD REGENERATED OVERNIGHT (03:14)"]
+    },
+    {
+      "day": 3, "title": "Memory", "date": "WED 12 NOV 2003", "case_id": "CASE_003", "photo": "corridor_b",
+      "intro": [
+        "You are almost sure the photograph in your office showed the corridor from the other end.",
+        "Today's subject works in Human Resources. She has verified more people than you have met.",
+        "Someone has taken a nameplate off a door on this floor. The screw holes are still clean."
+      ],
+      "boot_lines": ["NOTICE: DIRECTORY REINDEXED. 1 ENTRY NOT FOUND.", "NOTICE: THIS IS EXPECTED."]
+    },
+    {
+      "day": 4, "title": "Contamination", "date": "THU 13 NOV 2003", "case_id": "CASE_004", "photo": "corridor_c",
+      "intro": [
+        "It is very quiet. You cannot hear the other offices today.",
+        "You catch yourself rereading your own notes to check that they still sound like you.",
+        "The file in your queue belongs to the friendliest man in Customer Support."
+      ],
+      "boot_lines": ["WARNING: 14 FILES MODIFIED WHILE TERMINAL WAS OFF", "WARNING: MODIFIED BY: 0417", "CONTINUING ANYWAY"]
+    },
+    {
+      "day": 5, "title": "The Missing Record", "date": "FRI 14 NOV 2003", "case_id": "CASE_005", "photo": "corridor_c", "invert": true,
+      "intro": [
+        "Friday. A company-wide verification sweep is scheduled for 17:00. All staff.",
+        "The last file in your queue belongs to the woman who keeps the medical records.",
+        "You try to remember the Friday before you started here. You try for longer than you would like."
+      ],
+      "boot_lines": ["WARNING: PROFILE 0417 HAS NO PARENT RECORD", "WARNING: svc-continuity HOLDS A LOCK ON THIS SESSION", "WELCOME BACK."]
+    }
+  ]
+}

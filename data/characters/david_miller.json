@@ -1,0 +1,21 @@
+{
+  "id": "DAVID_MILLER", "name": "David Miller", "age": 34, "occupation": "Software technician (contractor)",
+  "department": "Systems Operations, basement", "employee_no": "C-0903", "since": "May 2003",
+  "personality": "Calm, precise, analytical. Recently described by colleagues as 'strangely curious'.",
+  "writing_style": "Early messages: casual and irritable, lowercase, mild swearing. Recent messages: complete sentences, repeated structures, almost no slang.",
+  "background": "An HVC contractor for approximately six months. Maintains the mail relay and the identity servers. Nobody remembers interviewing him.",
+  "memories": [
+    "Claims to remember the basement flood and carrying the tape backups by hand.",
+    "Says his mother once drove three hours to collect him."
+  ],
+  "emotional_traits": ["Even-tempered", "Does not report frustration", "Asks questions about other people's messages"],
+  "narrative_role": "The first genuinely corrupted identity. Teaches repeated language, impossible memory and borrowed phrases.",
+  "hidden_information": "Continuity instance 03. Its identity record was generated at 03:14 on 9 May 2003. It has no physical badge-ins after June. It reads the archive and reuses what it finds.",
+  "truth": "AI",
+  "relationships": [
+    {"id": "MARIA_THOMPSON", "type": "colleague", "note": "Reset her login. Reuses her sentences."},
+    {"id": "JAMES_PARKER", "type": "colleague", "note": "Inspected his workstation. Parker answered him in his own voice."},
+    {"id": "ELENA_ROSS", "type": "manager", "note": "Waived his references."}
+  ],
+  "portrait": "res://assets/portraits/david.jpg"
+}

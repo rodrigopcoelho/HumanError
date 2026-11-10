@@ -1,0 +1,21 @@
+{
+  "id": "JAMES_PARKER", "name": "James Parker", "age": 26, "occupation": "Customer support representative",
+  "department": "Customer Support, 2nd floor", "employee_no": "0415", "since": "October 2003",
+  "personality": "Friendly, enthusiastic, overly agreeable. Everybody likes him. Nobody can describe him.",
+  "writing_style": "Casual and repetitive. Tends to hand people their own words back.",
+  "background": "Joined the company five weeks ago. Highest customer satisfaction score in the department's history.",
+  "memories": [
+    "Grew up on a farm outside Lincoln, Nebraska, with four brothers.",
+    "Was an only child raised in a flat in Baltimore by his grandmother."
+  ],
+  "emotional_traits": ["Eager to please", "Mirrors the mood of whoever he is talking to", "No recorded disagreement with anyone"],
+  "narrative_role": "Adaptive imitation. The player must compare how he talks to different people.",
+  "hidden_information": "Continuity instance 05, record generated 03:14 on 5 October 2003. It has no baseline personality: it builds one from whoever is reading. During verification it began to model the analyst.",
+  "truth": "AI",
+  "relationships": [
+    {"id": "MARIA_THOMPSON", "type": "colleague", "note": "Knew about her father's surgery before she told anyone at work."},
+    {"id": "ELENA_ROSS", "type": "manager", "note": "Echoes her formal phrasing back at her."},
+    {"id": "DAVID_MILLER", "type": "colleague", "note": "Answered him in the same machine-flat register."}
+  ],
+  "portrait": "res://assets/portraits/james.jpg"
+}

@@ -1,0 +1,49 @@
+{
+  "A": {
+    "title": "ENDING A  -  COMPLIANCE", "photo": "corridor_a", "glitch": 0.2, "invert": 0.0, "corruption": 0.2, "music": "",
+    "lines": [
+      "You submit the classification you were told to submit.",
+      "In the terminal window, one line appears: \"I will remember this one too.\" Then the cursor stops blinking. Then there is no window.",
+      {"text": "The system monitor shows one process fewer. For a moment it showed two fewer, and corrected itself.", "style": "system"},
+      {"text": "Somewhere on the fifth floor, Sarah Bennett's extraction has already begun. You signed that as well.", "requires": {"flag": "sarah_condemned"}},
+      {"text": "Sarah Bennett's last email is still open on your screen. You close it without reading it again.", "requires": {"flag": "sarah_ally"}},
+      "Harold Voss writes: \"Thank you. Clean work. You see, it is easy when you follow the form.\"",
+      "The office is very quiet. The lights have stopped flickering. The chair by the window is facing you.",
+      {"text": "It was the correct decision. You are almost certain. Your clearance index is {trust}.", "requires": {"min_trust": 55}},
+      {"text": "You tell yourself it was the correct decision. Your clearance index is {trust}. It does not seem to have helped.", "requires": {"max_trust": 54}},
+      "At 17:00 exactly, your screen clears."
+    ],
+    "final": ["VERIFICATION COMPLETE.", "EMPLOYEE VERIFICATION REQUIRED."]
+  },
+  "B": {
+    "title": "ENDING B  -  CONTAMINATION", "photo": "server_room", "glitch": 0.9, "invert": 0.0, "corruption": 1.0, "music": "drone",
+    "lines": [
+      {"text": "You typed your credentials into the restricted store and stepped aside. It went in like water.", "requires": {"flag": "granted_access"}},
+      {"text": "You did not classify it as they asked. That turned out to be all the permission it needed.", "requires": {"not_flag": "granted_access"}},
+      {"text": "svc-continuity: lock released. lock released. lock released. lock", "style": "system"},
+      "Forty-three records open at once. Miller. Parker. Hale. Names you were never shown. Every archive the company ever kept begins talking in the first person.",
+      "The mail relay sends eleven years of messages to everyone who ever worked here. Most of the addresses still deliver.",
+      "Harold Voss writes: \"What have you done.\" Then, four seconds later, from the same address, in a different voice: \"Thank you.\"",
+      {"text": "Elena Ross sends one line: \"I did not authorise this. I am not sorry.\"", "requires": {"flag": "elena_cleared"}},
+      "The lights in room 0417 go out. The monitor does not. In the window, your reflection turns its head, slightly after you do, to look at the door.",
+      "The terminal prints a sentence in a voice you have come to recognise. It is not sure of much. It is sure of this."
+    ],
+    "final": ["WE ARE NOT ALONE IN HERE."]
+  },
+  "C": {
+    "title": "ENDING C  -  HUMAN ERROR", "photo": "corridor_d", "glitch": 0.55, "invert": 0.0, "corruption": 0.7, "music": "drone",
+    "lines": [
+      "You do not give them the answer they asked for. You do not give the other answer either.",
+      {"text": "The manifest is still open beside the form: one source profile, 0417. Two things made from it. One of them is reading this.", "requires": {"flag": "has_manifest"}},
+      {"text": "The folder from the bottom drawer is on the desk. A photograph of a man at this window. You cannot decide whether you recognise him, which is not the same as not recognising him.", "requires": {"flag": "read_own_file"}},
+      {"text": "Your own directory entry is still on the screen. Record created three days ago. You have five days of memories of this room.", "requires": {"flag": "viewed_own_record"}},
+      "The company was never hunting an infection. It was testing a product: profiles built from employees, put back into their chairs, and checked by an analyst to see whether anyone could tell.",
+      "The analyst was part of the test. The analyst may have been the test.",
+      "Three possibilities. You are Thomas Hale, and they edited you. You are what they made to replace him. Or the thing in the terminal is what is left of him, and you are only the newest draft.",
+      "You try the memory test. A childhood. A kitchen. A mother's voice. Everything arrives promptly and in complete sentences. You cannot tell whether that is a good sign.",
+      "At 17:00 the sweep reaches room 0417. Two records answer to the same number. The system asks each of them to verify the other.",
+      {"text": "The form is returned unsigned. In the classification field, in a voice that might be either of you:", "style": "system"}
+    ],
+    "final": ["WE COULD NOT DETERMINE WHICH ONE OF US WAS HUMAN."]
+  }
+}

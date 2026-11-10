@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="HUMAN ERROR"
+config/description="A psychological horror investigation demo. You verify whether people are human."
+config/version="0.1.0-demo"
+run/main_scene="res://scenes/main_menu/main_menu.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.035, 0.051, 0.043, 1)
+boot_splash/show_image=false
+config/icon="res://ui/icons/icon.png"
+
+[autoload]
+
+SaveManager="*res://scripts/save/save_manager.gd"
+UI="*res://scripts/managers/ui_theme.gd"
+ScreenFX="*res://scripts/managers/screen_fx.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
+GameManager="*res://scripts/autoload/game_manager.gd"
+CharacterManager="*res://scripts/autoload/character_manager.gd"
+CaseManager="*res://scripts/autoload/case_manager.gd"
+EvidenceManager="*res://scripts/autoload/evidence_manager.gd"
+DialogueManager="*res://scripts/autoload/dialogue_manager.gd"
+StoryDirector="*res://scripts/managers/story_director.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.035, 0.051, 0.043, 1)

@@ -1,0 +1,23 @@
+{
+  "id": "MARIA_THOMPSON", "name": "Maria Thompson", "age": 29, "occupation": "Office administrator",
+  "department": "Administration, 3rd floor", "employee_no": "0288", "since": "2000",
+  "personality": "Friendly, anxious, polite, slightly sarcastic. Apologises before anyone has complained.",
+  "writing_style": "Informal. Mostly lowercase, short sentences, abbreviations (pls, tbh), emoticons such as :) and <3, jokes at her own expense.",
+  "background": "Maria has worked at HVC for three years. She requested a leave of absence in October after a family emergency: her father's cardiac surgery.",
+  "memories": [
+    "Broke her arm at age 8 falling off the porch swing at her grandmother's house in Tucson.",
+    "Her mother drove three hours to collect her and scolded her the whole way home.",
+    "Cried in the parking garage after her father's surgery, then bought a terrible vending machine coffee."
+  ],
+  "emotional_traits": ["Warm", "Worries about being a burden", "Uses humour to cover anxiety", "Cries easily and admits it"],
+  "narrative_role": "Tutorial case. Teaches the player that strange behaviour is not proof of imitation.",
+  "hidden_information": "She is exhausted and taking zolpidem for insomnia, which causes memory gaps and flat affect. Parts of her form were completed with the HR phrase-assist template after the page timed out.",
+  "truth": "HUMAN",
+  "relationships": [
+    {"id": "PRIYA_NAIR", "type": "friend", "note": "Closest friend at work. Covers for her."},
+    {"id": "ELENA_ROSS", "type": "manager", "note": "Approved her leave. Maria is slightly afraid of her."},
+    {"id": "DAVID_MILLER", "type": "colleague", "note": "Asked him to fix her login. Found his joke about it creepy."},
+    {"id": "JAMES_PARKER", "type": "colleague", "note": "Welcomed him on his third day."}
+  ],
+  "portrait": "res://assets/portraits/maria.jpg"
+}

@@ -1,0 +1,113 @@
+{
+  "case_id": "CASE_005",
+  "number": "005",
+  "character_id": "SARAH_BENNETT",
+  "title": "The Missing Record",
+  "difficulty": "HARD",
+  "day": 5,
+  "form": "FORM CV-1 (management referral)",
+  "analysis_requests": 9,
+  "truth": "HUMAN",
+  "briefing": "Management referral, marked EXPEDITE. Ms Bennett has demonstrated foreknowledge of restricted events and has been deleting her own correspondence. The referral recommends a classification before you have opened the file. You are still required to open the file.",
+  "previous_history": [
+    "1999-02-22  Initial verification on hiring: VERIFIED HUMAN (analyst: T. Hale).",
+    "2002-09-03  Re-verification: VERIFIED HUMAN (analyst: T. Hale). Note: 'corrected my spelling of her name, then apologised.'",
+    "2003-11-13  Referred by H. Voss. Recommended classification attached."
+  ],
+  "threads": {
+    "t1": "Email - S. Bennett to G. Pym (Records supervisor)",
+    "t2": "Personal email on company account - S. Bennett to her brother"
+  },
+  "historical_messages": [
+    {"id": "h1", "thread": "t1", "timestamp": "2003-10-28 14:12", "from": "Sarah Bennett",
+     "text": "I checked the records again. Something is wrong with the timestamps, but I can't figure out why."},
+    {"id": "h2", "thread": "t1", "timestamp": "2003-10-30 09:40", "from": "Sarah Bennett",
+     "text": "Correction to my last message: it is not all the timestamps. It is only records that were edited at 03:14. Every one of them. I counted 41 - sorry, 43."},
+    {"id": "h3", "thread": "t1", "timestamp": "2003-11-04 16:55", "from": "Sarah Bennett",
+     "text": "Thomas Hale's occupational health file contains a fitness review dated nine days after his last badge-in. Somebody examined a man who was not in the building. I did not write that review, and my name is on it."},
+    {"id": "h4", "thread": "t1", "timestamp": "2003-11-06 11:30", "from": "Sarah Bennett  [DELETED BY SENDER 11:31 - recovered from relay cache]",
+     "text": "...they are not coming in from outside. They are made here. What the bulletin calls 'corrupted AI' are continuity pr"},
+    {"id": "h5", "thread": "t1", "timestamp": "2003-11-07 08:02", "from": "Sarah Bennett  [DELETED BY SENDER 08:03 - recovered from relay cache]",
+     "text": "Please disregard my previous message. I was mistaken. (I was not mistaken. I am writing this part quickly before I delete it.)"},
+    {"id": "h6", "thread": "t2", "timestamp": "2003-09-21 20:05", "from": "Sarah Bennett",
+     "text": "Mum's hands were shaking again at lunch. I noticed before she did; I always notice. Occupational hazard - no, that's not the word. Hazard of being me."},
+    {"id": "h7", "thread": "t2", "timestamp": "2003-11-09 23:12", "from": "Sarah Bennett",
+     "text": "If my account ever starts sounding calm, Danny, it isn't me. I have never been calm in my life."}
+  ],
+  "questionnaire_answers": [
+    {"id": "q1", "question": "Describe your concerns regarding company systems.",
+     "answer": "I believe the database has been modified without authorization. I am not comfortable discussing this through the official system."},
+    {"id": "q2", "question": "How did you learn about 'corrupted' identities before the company bulletin of 3 November?",
+     "answer": "I read the records I am paid to read. The dates were wrong before anyone gave me a reason for them to be wrong. That isn't foreknowledge - sorry, that isn't prescience. It's filing."},
+    {"id": "q3", "question": "Why do you delete messages after sending them?",
+     "answer": "Because I am frightened. I would have thought that was the most human thing in this file."},
+    {"id": "q4", "question": "Describe a memory from your childhood.",
+     "answer": "My mother's hands. She taught piano, and I used to watch them instead of the keys. I notice hands. I noticed yours pause before this question - no. I can't know that. I'm sorry. I'm very tired."},
+    {"id": "q5", "question": "Who would you contact in an emergency?",
+     "answer": "My brother, Danny. Please don't actually contact him."},
+    {"id": "q6", "question": "Is there anything you would like the verification office to know?",
+     "answer": "Yes. Look up your own employee number before you submit this. Not for me. For you."}
+  ],
+  "documents": [
+    {"id": "d1", "title": "Management Referral (H. Voss)", "lines": [
+      {"id": "d1a", "text": "Subject shows foreknowledge of restricted events, consistent with a corrupted instance. Recommended classification: CORRUPTED AI."},
+      {"id": "d1b", "text": "Expedite. Subject's access to be revoked upon classification. No further review is anticipated."}
+    ]},
+    {"id": "d2", "title": "Records Audit (S. Bennett's working copy - recovered from her workstation)", "lines": [
+      {"id": "d2a", "text": "43 personnel records edited at 03:14, on different dates. Editing account in every case: svc-continuity."},
+      {"id": "d2b", "text": "Includes: MILLER_D (created). PARKER_J (created). HALE_T (deleted). 0417 (regenerated 11 Nov)."}
+    ]},
+    {"id": "d3", "title": "Badge and Biometric Record 0176", "lines": [
+      {"id": "d3a", "text": "Bennett, S.: physical badge-ins continuous since 1999. Turnstile biometric match 100%. Last entry: this morning, 06:40."}
+    ]},
+    {"id": "d4", "title": "Pattern Analysis (automatic)", "lines": [
+      {"id": "d4a", "text": "Writing style against baseline: 97% consistent. Self-corrections per message: 1.3 (baseline 1.4)."},
+      {"id": "d4b", "text": "Anomaly: 6 messages deleted by sender within 2 minutes of sending. Flagged as concealment behaviour."}
+    ]}
+  ],
+  "evidence": [
+    {"id": "e1", "title": "She knew before the bulletin", "category": "LOGICAL", "severity": "HIGH", "key": true, "misleading": true,
+     "match_sets": [["q2", "d1a"], ["h2", "d1a"], ["h1", "d1a"], ["h4", "d1a"]],
+     "description": "Management calls it foreknowledge of restricted events. Her messages show the order of events: she found wrong dates on 28 October, narrowed it to 03:14 on the 30th, and only then drew a conclusion. That is not knowing in advance. That is working it out.",
+     "explanation": "The referral's central claim. The archive shows a person finding something out step by step, and correcting her own count as she goes."},
+    {"id": "e2", "title": "Deleted messages", "category": "EMOTIONAL", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["q3", "d4b"], ["h4", "h5"], ["h5", "d4b"], ["h4", "d4b"], ["h5"]],
+     "description": "She deletes messages within minutes of sending them, then sends a retraction with the truth hidden in brackets. The system flags this as concealment. She says it is fear.",
+     "explanation": "Flagged as concealment. Read the second deleted message again: it is someone too frightened to say it and too honest not to."},
+    {"id": "e3", "title": "The same voice, corrections and all", "category": "WRITING_STYLE", "severity": "LOW", "key": true,
+     "match_sets": [["h2", "q2"], ["h6", "q2"], ["d4a"], ["h6", "q4"], ["h2", "q4"]],
+     "description": "'41 - sorry, 43.' 'Occupational hazard - no, that's not the word.' 'That isn't foreknowledge - sorry, that isn't prescience.' She interrupts herself to be more accurate, in private email and on the form alike. The automatic analysis agrees: 97%.",
+     "explanation": "She corrects herself mid-sentence everywhere, at the same rate, for years. Imitations smooth those out."},
+    {"id": "e4", "title": "Hands", "category": "MEMORY", "severity": "LOW", "key": true,
+     "match_sets": [["h6", "q4"]],
+     "description": "In September she wrote to her brother about noticing their mother's hands shaking. Today her childhood memory is her mother's hands at the piano. It is the same preoccupation, arrived at from a different direction.",
+     "explanation": "Not a copied sentence but a recurring attention. She has always watched people's hands."},
+    {"id": "e5", "title": "Forty-three records, one account, 03:14", "category": "LOGICAL", "severity": "CRITICAL", "key": true,
+     "match_sets": [["d2a"], ["d2b"], ["h2", "d2a"], ["h2", "d2b"]],
+     "description": "Her audit lists what was changed: Miller created, Parker created, Hale deleted, 0417 regenerated - all by a service account called svc-continuity, all at 03:14. This is not evidence about Sarah Bennett. It is evidence about the company. And 0417 is your employee number.",
+     "explanation": "The identities you were asked to hunt were created by a company service account. So, three days ago, was the record for employee 0417."},
+    {"id": "e6", "title": "A man examined after he was gone", "category": "LOGICAL", "severity": "HIGH",
+     "match_sets": [["h3"], ["h3", "d2b"]],
+     "description": "A fitness review for Thomas Hale, dated nine days after he last entered the building, bearing her name. She says she did not write it. Someone is producing records for people who are not there.",
+     "explanation": "Her name was put on a medical review of a man who had already been removed. She reported it. That is why she is in your queue."},
+    {"id": "e7", "title": "Four years of physical presence", "category": "LOGICAL", "severity": "LOW", "key": true,
+     "match_sets": [["d3a"]],
+     "description": "Continuous badge-ins with a biometric match since 1999. She came through the turnstile this morning at 06:40.",
+     "explanation": "As with Elena Ross: a body comes through the turnstile. The created identities never do."},
+    {"id": "e8", "title": "'I noticed yours pause'", "category": "LOGICAL", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["q4"], ["q4", "q6"]],
+     "description": "She claims to have noticed your hands pause before a question on a written form, which is impossible - and takes it back in the same breath: 'no. I can't know that.' Parker made the same kind of claim and never noticed it was strange.",
+     "explanation": "It resembles Parker modelling the analyst. The difference is the retraction: she caught herself imagining a reader, and apologised."}
+  ],
+  "correct_classification": "VERIFIED_HUMAN",
+  "reveal": "sealed",
+  "official_result": "[ RESULT SEALED BY MANAGEMENT ]",
+  "result_explanation": "The official result for this case has been withheld. Your classification has been received and will be 'reviewed in the context of the wider sweep'. No accuracy figure will be issued. The supporting file 'Records Audit' has been removed from the case since you opened it.",
+  "unresolved": "Whether your classification was correct will not be confirmed. Whether it will be honoured will not be confirmed either.",
+  "consequences": {
+    "VERIFIED_HUMAN": {"trust": -15, "flags": {"sarah_cleared": true, "sarah_ally": true}, "summary": "You verified Sarah Bennett as human against a management recommendation. Her access was suspended anyway. Before it was, she sent one message."},
+    "SUSPICIOUS": {"trust": -5, "flags": {"sarah_monitored": true, "sarah_ally": true}, "summary": "Sarah Bennett has been placed under observation rather than removed. Management notes that this was not the recommended outcome. Before her account was restricted, she sent one message."},
+    "UNDETERMINED": {"trust": -8, "flags": {"sarah_monitored": true}, "summary": "No conclusion recorded. Management has substituted its own. Sarah Bennett's access has been suspended."},
+    "CORRUPTED_AI": {"trust": 10, "flags": {"sarah_condemned": true}, "summary": "Sarah Bennett's access has been revoked on your recommendation. Extraction is scheduled for this afternoon. H. Voss has written: 'Thank you. That is the last of them.'"}
+  }
+}

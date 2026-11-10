@@ -1,0 +1,21 @@
+{
+  "id": "SARAH_BENNETT", "name": "Sarah Bennett", "age": 32, "occupation": "Medical records specialist",
+  "department": "Occupational Health, 5th floor", "employee_no": "0176", "since": "1999",
+  "personality": "Intelligent, nervous, observant, empathetic. Notices things and then apologises for noticing.",
+  "writing_style": "Detailed, carefully punctuated messages. Corrects herself mid-sentence ('sorry, 43'). Never calm.",
+  "background": "Keeps the occupational health files. For three weeks she has been reporting that record timestamps are wrong, and deleting her own messages afterwards.",
+  "memories": [
+    "Her mother taught piano. Sarah watched her hands instead of the keys.",
+    "Noticed her mother's tremor before her mother did."
+  ],
+  "emotional_traits": ["Anxious", "Brave in short bursts", "Protective of her brother Danny", "Ashamed of being afraid"],
+  "narrative_role": "A potential ally. Connects the individual cases to what the company is doing.",
+  "hidden_information": "She has found that 43 personnel records were edited at 03:14 by the service account svc-continuity, including the creation of Miller and Parker, the deletion of Hale and the regeneration of 0417. Management wants her classified as corrupted to discredit her.",
+  "truth": "HUMAN",
+  "relationships": [
+    {"id": "THOMAS_HALE", "type": "colleague", "note": "Found a fitness review in his file dated after he was gone."},
+    {"id": "HAROLD_VOSS", "type": "adversary", "note": "He referred her for verification."},
+    {"id": "MARIA_THOMPSON", "type": "colleague", "note": "Wrote Maria's occupational health note."}
+  ],
+  "portrait": "res://assets/portraits/sarah.jpg"
+}

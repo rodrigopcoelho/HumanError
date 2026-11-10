@@ -1,0 +1,105 @@
+{
+  "case_id": "CASE_001",
+  "number": "001",
+  "character_id": "MARIA_THOMPSON",
+  "title": "The Returning Employee",
+  "difficulty": "EASY",
+  "day": 1,
+  "form": "FORM RV-2 (return from leave)",
+  "analysis_requests": 8,
+  "truth": "HUMAN",
+  "briefing": "Routine re-verification. Ms Thompson is returning from four weeks of leave and her answers on form RV-2 do not match her linguistic baseline. The automatic check flagged her at 71% deviation. Compare her archived messages with her new answers, examine the supporting files, and decide whether the person who filled in this form is Maria Thompson.",
+  "previous_history": [
+    "2000-08-14  Initial verification on hiring: VERIFIED HUMAN (analyst: T. Hale).",
+    "2002-02-01  Annual re-verification: VERIFIED HUMAN (analyst: T. Hale). Note: 'apologised to the form twice.'"
+  ],
+  "threads": {
+    "t1": "Internal chat - M. Thompson to P. Nair (Facilities)",
+    "t2": "Personal email on company account - M. Thompson to P. Nair",
+    "t3": "Internal chat - M. Thompson to D. Miller (Systems)"
+  },
+  "historical_messages": [
+    {"id": "h1", "thread": "t1", "timestamp": "2003-09-12 08:47", "from": "Maria Thompson",
+     "text": "hey! sorry for the late reply. i've been dealing with some family stuff. i'll send the documents tomorrow morning :)",
+     "mutation": {"min_day": 4, "after_views": 1, "text": "Hello. I apologise for the delayed reply. I have been dealing with familial matters. I will send the documents tomorrow morning."}},
+    {"id": "h2", "thread": "t1", "timestamp": "2003-09-12 08:49", "from": "Maria Thompson",
+     "text": "also the 3rd floor printer is jammed AGAIN. i swear it knows when i'm in a hurry lol"},
+    {"id": "h3", "thread": "t1", "timestamp": "2003-09-19 17:31", "from": "Maria Thompson",
+     "text": "ok heading out. the leave forms are in elena's in-tray, she'd already gone home. if she asks pls don't let her think i forgot"},
+    {"id": "h4", "thread": "t2", "timestamp": "2003-08-03 21:15", "from": "Maria Thompson",
+     "text": "random memory: grandma's house in tucson, the summer i broke my arm falling off her porch swing. i was 8. mom drove 3 hrs to get me and yelled the whole way home. miss that swing tbh"},
+    {"id": "h5", "thread": "t2", "timestamp": "2003-10-02 23:58", "from": "Maria Thompson",
+     "text": "can't sleep again. dad's surgery got moved to the 9th. i keep doing the math on the insurance stuff and it never adds up. sorry, i know it's late"},
+    {"id": "h6", "thread": "t2", "timestamp": "2003-10-10 07:05", "from": "Maria Thompson",
+     "text": "he's out of surgery. he's ok. i cried in the parking garage for like 20 min and then bought a terrible vending machine coffee. will be out for a few weeks. thank you for covering <3"},
+    {"id": "h7", "thread": "t3", "timestamp": "2003-10-01 11:20", "from": "Maria Thompson",
+     "text": "david did you ever fix the thing with my login? it keeps saying my session 'already exists'. creepy"}
+  ],
+  "questionnaire_answers": [
+    {"id": "q1", "question": "State the reason for your recent absence.",
+     "answer": "I have experienced a series of emotionally significant familial events. I am prepared to resume my professional responsibilities."},
+    {"id": "q2", "question": "Describe a memory from your childhood.",
+     "answer": "When I was nine I fell from a swing at my grandmother's house in Phoenix and broke my wrist. My mother drove a long way to collect me."},
+    {"id": "q3", "question": "Describe your last conversation with a colleague before your leave began.",
+     "answer": "I spoke with Elena Ross on my last day and handed her my leave forms in person. She wished my father well."},
+    {"id": "q4", "question": "How do you feel about returning to work?",
+     "answer": "I feel adequate. I am rested. I am ready."},
+    {"id": "q5", "question": "Confirm your workstation number.",
+     "answer": "3-114. third floor, next to the printer that hates me."},
+    {"id": "q6", "question": "Is there anything you would like the verification office to know?",
+     "answer": "sorry if this reads weird. i haven't slept properly in about a month and the form kept timing out so i did some of it with the hr template thing. please don't flag me, i really need this job back"}
+  ],
+  "documents": [
+    {"id": "d1", "title": "Leave of Absence Request (HR-22)", "lines": [
+      {"id": "d1a", "text": "Reason: immediate family medical (father, cardiac surgery). Approved: E. Ross."},
+      {"id": "d1b", "text": "Forms received: found in HR in-tray, 19 Sep, 17:40. Not handed over in person."}
+    ]},
+    {"id": "d2", "title": "Occupational Health Note (S. Bennett)", "lines": [
+      {"id": "d2a", "text": "Employee reports severe insomnia. Prescribed zolpidem 10 mg from 12 Oct. Known side effects: memory gaps, confusion about recent events, flattened affect."},
+      {"id": "d2b", "text": "Fit to return: yes, with monitoring. 'She is exhausted, not absent.'"}
+    ]},
+    {"id": "d3", "title": "Form Submission Log (RV-2)", "lines": [
+      {"id": "d3a", "text": "Session timed out 3 times. Fields 1, 2 and 4 were completed using the HR phrase-assist template. Fields 5 and 6 were typed directly."}
+    ]}
+  ],
+  "evidence": [
+    {"id": "e1", "title": "Register shift: informal to formal", "category": "WRITING_STYLE", "severity": "MODERATE", "key": true, "misleading": true,
+     "match_sets": [["h1", "q1"], ["h6", "q1"], ["h5", "q1"]],
+     "description": "Archived messages are lowercase, abbreviated and warm. The new answer is formal and impersonal. A change this large is consistent with substitution, but also with templates, stress, or someone trying hard to sound employable.",
+     "explanation": "The most visible anomaly, and the reason she was flagged. On its own it proves nothing: the submission log shows this field was written with the HR template."},
+    {"id": "e2", "title": "Childhood memory has drifted", "category": "MEMORY", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["h4", "q2"]],
+     "description": "On file: age 8, Tucson, a broken arm. New answer: age nine, Phoenix, a broken wrist. The shape of the memory is intact; three details have moved.",
+     "explanation": "Real memories drift in exactly this way. An imitation working from the archive would have copied the details correctly."},
+    {"id": "e3", "title": "A conversation that did not happen", "category": "LOGICAL", "severity": "HIGH", "misleading": true,
+     "match_sets": [["h3", "q3"], ["d1b", "q3"]],
+     "description": "She says she handed her forms to Elena Ross in person. Her own message, and the HR receipt, say the forms were left in an in-tray after Ross had gone home.",
+     "explanation": "A false memory of a recent event. Alarming, until you read the occupational health note about her medication."},
+    {"id": "e4", "title": "Flattened emotional response", "category": "EMOTIONAL", "severity": "MODERATE", "misleading": true,
+     "match_sets": [["h6", "q4"], ["h5", "q4"]],
+     "description": "A month ago she wrote about crying in a parking garage. Today she feels 'adequate'. The emotional range has collapsed.",
+     "explanation": "Flat affect is a listed side effect of her prescription, and this field was also template-assisted."},
+    {"id": "e5", "title": "Medication explains the gaps", "category": "LOGICAL", "severity": "LOW", "key": true,
+     "match_sets": [["d2a"], ["d2b"]],
+     "description": "A dated prescription for a sleep medication whose side effects are memory gaps, confusion about recent events and flattened affect. This accounts for every memory and emotional anomaly in the form.",
+     "explanation": "The single most important document in the file. It turns three alarming findings into one tired woman."},
+    {"id": "e6", "title": "Her own voice resurfaces", "category": "WRITING_STYLE", "severity": "LOW", "key": true,
+     "match_sets": [["q6"], ["q5", "h2"]],
+     "description": "Where she typed directly, the lowercase, the apology and the printer joke all return. The baseline voice is still there underneath the form.",
+     "explanation": "The fields she typed herself sound exactly like Maria: lowercase, apologetic, still at war with the printer."},
+    {"id": "e7", "title": "Template-assisted fields", "category": "LOGICAL", "severity": "LOW", "key": true,
+     "match_sets": [["d3a"]],
+     "description": "The submission log shows the formal answers were produced with the HR phrase-assist template after repeated timeouts. The formality belongs to the software, not to her.",
+     "explanation": "Explains the register shift completely. The system flagged its own template."}
+  ],
+  "correct_classification": "VERIFIED_HUMAN",
+  "reveal": "full",
+  "official_result": "VERIFIED HUMAN",
+  "result_explanation": "The inconsistencies are explained by exhaustion and personal stress. Maria Thompson has not slept properly in a month, is taking medication that affects memory and mood, and completed half the form with a corporate template because the page kept timing out. Every anomaly points at a tired person, not at an imitation. Remember this case: strange is not the same as false.",
+  "consequences": {
+    "VERIFIED_HUMAN": {"trust": 5, "flags": {"maria_cleared": true}, "summary": "Maria Thompson's access is restored. She returns to workstation 3-114 on Tuesday."},
+    "SUSPICIOUS": {"trust": 0, "flags": {"maria_monitored": true}, "summary": "Maria Thompson returns under monitored access. Her messages will be read by a second analyst for ninety days. She has been told why."},
+    "UNDETERMINED": {"trust": -3, "flags": {"maria_monitored": true}, "summary": "No conclusion recorded. Maria Thompson returns under monitored access by default. Management notes that an analyst who cannot decide is of limited use."},
+    "CORRUPTED_AI": {"trust": -10, "flags": {"maria_condemned": true}, "summary": "Maria Thompson's access has been revoked on your recommendation. An extraction interview has been scheduled. Occupational Health has filed an objection."}
+  }
+}

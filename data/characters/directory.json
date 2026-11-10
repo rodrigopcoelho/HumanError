@@ -1,0 +1,55 @@
+{
+  "employees": [
+    {"id": "HAROLD_VOSS", "name": "Harold Voss", "title": "Head of Verification", "department": "Identity Services, 4th floor", "employee_no": "0009", "since": "1989", "ext": "4001", "status": "ACTIVE",
+     "note": "Your supervisor. Prefers email to conversation.",
+     "variants": [{"requires": {"min_day": 5}, "fields": {"note": "Your supervisor. This record was last edited today at 03:14."}}]},
+    {"id": "ELENA_ROSS", "character_id": "ELENA_ROSS", "department": "Human Resources, 5th floor", "employee_no": "0031", "since": "1992", "ext": "5002", "status": "ACTIVE",
+     "note": "Signs all record changes.",
+     "variants": [
+       {"requires": {"flag": "elena_condemned"}, "fields": {"status": "REMOVED PENDING REVIEW", "note": "Removed on the recommendation of analyst 0417. Reinstated by management the same evening. Removed again. This field is contested."}},
+       {"requires": {"flag": "elena_monitored"}, "fields": {"status": "ACTIVE - MONITORED"}}
+     ]},
+    {"id": "MARIA_THOMPSON", "character_id": "MARIA_THOMPSON", "department": "Administration, 3rd floor", "employee_no": "0288", "since": "2000", "ext": "3114", "status": "ON LEAVE - RETURNING",
+     "note": "Workstation 3-114, next to the printer.",
+     "variants": [
+       {"requires": {"flag": "maria_cleared"}, "fields": {"status": "ACTIVE"}},
+       {"requires": {"flag": "maria_monitored"}, "fields": {"status": "ACTIVE - MONITORED ACCESS"}},
+       {"requires": {"flag": "maria_condemned"}, "fields": {"status": "ACCESS REVOKED", "note": "Classified CORRUPTED AI by analyst 0417. Extraction interview scheduled.", "alert": "This employee was removed on your recommendation."}},
+       {"requires": {"flag": "maria_condemned", "min_day": 4}, "fields": {"status": "ACCESS REVOKED", "note": "Extraction interview completed. Subject wept. Noted as 'convincing'.", "alert": "This employee was removed on your recommendation."}}
+     ]},
+    {"id": "DAVID_MILLER", "character_id": "DAVID_MILLER", "department": "Systems Operations, basement", "employee_no": "C-0903", "since": "May 2003", "ext": "0003", "status": "ACTIVE (CONTRACTOR)",
+     "note": "Mail relay and identity servers.",
+     "variants": [
+       {"requires": {"flag": "david_quarantined"}, "fields": {"status": "DECOMMISSIONED", "note": "Identity withdrawn. Do not reply to messages from this account."}},
+       {"requires": {"flag": "david_free", "min_day": 4}, "fields": {"note": "Mail relay and identity servers. Has requested read access to Verification."}}
+     ]},
+    {"id": "JAMES_PARKER", "character_id": "JAMES_PARKER", "department": "Customer Support, 2nd floor", "employee_no": "0415", "since": "October 2003", "ext": "2040", "status": "ACTIVE",
+     "note": "Employee of the month, October.",
+     "variants": [
+       {"requires": {"flag": "james_quarantined"}, "fields": {"status": "DECOMMISSIONED", "note": "Identity withdrawn. Customers have asked where he went. Several described him differently."}},
+       {"requires": {"flag": "james_free"}, "fields": {"title": "Customer support representative / Verification liaison", "note": "Has been moved to the 4th floor at his own cheerful request."}}
+     ]},
+    {"id": "SARAH_BENNETT", "character_id": "SARAH_BENNETT", "department": "Occupational Health, 5th floor", "employee_no": "0176", "since": "1999", "ext": "5110", "status": "ACTIVE",
+     "note": "Medical records.",
+     "variants": [
+       {"requires": {"min_day": 5}, "fields": {"status": "UNDER VERIFICATION"}},
+       {"requires": {"flag": "sarah_condemned"}, "fields": {"status": "ACCESS REVOKED - EXTRACTION SCHEDULED", "alert": "This employee was removed on your recommendation."}},
+       {"requires": {"flag": "sarah_cleared"}, "fields": {"status": "VERIFIED HUMAN - ACCESS SUSPENDED BY MANAGEMENT"}}
+     ]},
+    {"id": "PRIYA_NAIR", "name": "Priya Nair", "title": "Facilities coordinator", "department": "Facilities, 3rd floor", "employee_no": "0301", "since": "2001", "ext": "3120", "status": "ACTIVE",
+     "note": "Knows where everything is kept and who moved it.",
+     "variants": [{"requires": {"flag": "priya_changed"}, "fields": {"note": "I have experienced no irregularities.", "since": "13 NOV 2003"}}]},
+    {"id": "THOMAS_HALE", "name": "Thomas Hale", "title": "Verification analyst", "department": "Identity Services, 4th floor", "employee_no": "0417", "since": "1998", "ext": "4017", "status": "ON LEAVE",
+     "requires": {"max_day": 2},
+     "note": "Room 0417. Leave type: not specified. Return date: not specified."},
+    {"id": "GERALD_PYM", "name": "Gerald Pym", "title": "Records supervisor", "department": "Occupational Health, 5th floor", "employee_no": "0102", "since": "1994", "ext": "5100", "status": "ACTIVE", "note": "Receives S. Bennett's reports. Has not replied to any of them."},
+    {"id": "IFE_OKAFOR", "name": "Ife Okafor", "title": "Security desk", "department": "Lobby", "employee_no": "0260", "since": "1997", "ext": "0001", "status": "ACTIVE", "note": "Issues visitor badges. Keeps the turnstile logs.",
+     "variants": [{"requires": {"min_day": 4}, "fields": {"note": "Issues visitor badges. Reports that 0417 badged in twice this morning."}}]},
+    {"id": "PLAYER", "name": "{player}", "title": "Verification analyst", "department": "Identity Services, 4th floor", "employee_no": "0417", "since": "Monday", "ext": "4017", "status": "PENDING VERIFICATION",
+     "requires": {"flag": "player_record_visible"},
+     "portrait": "res://assets/portraits/composite.jpg", "photo_glitch": 0.7,
+     "record_created": "11 NOV 2003, 03:14  (3 days ago)", "record_alert": true,
+     "note": "Source profile: [RESTRICTED - svc-continuity]. Previous holder of employee number 0417: [NO SUCH EMPLOYEE]. Photograph: composite, generated.",
+     "alert": "EMPLOYEE STATUS: PENDING VERIFICATION."}
+  ]
+}

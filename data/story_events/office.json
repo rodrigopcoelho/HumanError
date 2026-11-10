@@ -1,0 +1,23 @@
+{
+  "days": {
+    "1": {"light": 1.0, "flicker": 0.0, "chair": [1.7, 1.3, 30], "clock": "08:58", "corridor": "corridor_a", "window": "window_a", "window_light": 0.85,
+          "reflection_delay": 0.0, "reflection_alpha": 0.28, "monitor_text": "HVC TERMINAL v4.1\n\n> AWAITING LOGIN\n> EMPLOYEE 0417", "ambience": "office", "phone_ring": "office_phone_d1_morning",
+          "evening": {"light": 0.85, "window_light": 0.45, "monitor_text": "SESSION ENDED\n\n> GOOD NIGHT, 0417", "phone_ring": ""}},
+    "2": {"light": 0.95, "flicker": 0.2, "chair": [1.3, 0.9, 65], "clock": "09:01", "corridor": "corridor_a", "window": "window_a", "window_light": 0.8,
+          "reflection_delay": 0.0, "reflection_alpha": 0.3, "monitor_text": "HVC TERMINAL v4.1\n\n> AWAITING LOGIN\n> EMPLOYEE 0417", "ambience": "office",
+          "evening": {"light": 0.8, "window_light": 0.4, "chair": [1.1, 0.7, 80], "monitor_text": "SESSION ENDED\n\n> UNAUTHORIZED PATTERN\n> [entry removed]"}},
+    "3": {"light": 0.85, "flicker": 0.45, "chair": [1.9, -0.2, 90], "clock": "03:14", "corridor": "corridor_b", "window": "window_a", "window_light": 0.7,
+          "reflection_delay": 0.35, "reflection_alpha": 0.35, "monitor_text": "HVC TERMINAL v4.1\n\n> AWAITING LOGIN\n> EMPLOYEE 0417\n> (WAS: HALE, T.)", "ambience": "office", "phone_ring": "office_phone_d3_morning",
+          "board_papers": [[-0.35, 0.2, 0], [0.2, 0.15, 0], [-0.1, -0.2, 0]],
+          "evening": {"light": 0.7, "window_light": 0.35, "chair": [2.1, -0.4, 90], "monitor_text": "SESSION ENDED\n\n> THERE IS NO HALE, T.", "phone_ring": ""}},
+    "4": {"light": 0.7, "flicker": 0.7, "chair": [0.9, 1.6, 180], "clock": "03:14", "corridor": "corridor_c", "window": "window_b", "window_light": 0.55,
+          "reflection_delay": 1.2, "reflection_alpha": 0.45, "door_shadow": true, "corridor_light": 0.6, "coffee_red": true, "music": true,
+          "monitor_text": "WE LEARN FROM\nWHAT YOU READ", "ambience": "office_empty",
+          "board_papers": [[-0.35, 0.2, 0], [0.2, 0.15, 1], [-0.1, -0.2, 0]],
+          "evening": {"light": 0.55, "window_light": 0.3, "chair": [0.5, 1.2, 180], "monitor_text": "DO YOU THINK I AM\nPRETENDING TO BE ALIVE?", "monitor_red": true}},
+    "5": {"light": 0.5, "flicker": 0.9, "chair": [0.0, 1.9, 180], "clock": "03:14", "corridor": "corridor_d", "window": "window_b", "window_light": 0.4,
+          "reflection_delay": 3.0, "reflection_alpha": 0.6, "door_shadow": true, "corridor_light": 0.3, "coffee_red": true, "cabinet_open": true, "music": true,
+          "monitor_text": "EMPLOYEE 0417\nSTATUS: PENDING\nVERIFICATION", "monitor_red": true, "ambience": "office_dead", "phone_ring": "office_phone_d5_morning",
+          "board_papers": [[-0.35, 0.2, 1], [0.2, 0.15, 1], [-0.1, -0.2, 1], [0.4, -0.2, 1]]}
+  }
+}
